@@ -14,6 +14,7 @@ import Cosmetics from '../views/cosmetics'
 import Lifestyle from '../views/lifestyle'
 import Kids from '../views/kids'
 import Upcoming from '../views/upcoming'
+import produceDetail from '../components/produceDetail'
 
 
 
@@ -29,6 +30,7 @@ const router = (
 				<Route path="/lifestyle" component={Lifestyle}></Route>
 				<Route path="/kids" component={Kids}></Route>
 				<Route path="/upcoming" component={Upcoming}></Route>
+				<Route path="/producedetail/:data" component={produceDetail} exact></Route>
 				<Redirect from="*"  to="/index"/>
 				</Switch>
 			</App>
