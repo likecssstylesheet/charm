@@ -1,3 +1,4 @@
+import React from 'react'
 import {
 	HashRouter as Router,
 	Switch,
@@ -16,7 +17,7 @@ import Upcoming from '../views/upcoming'
 
 
 
-const router = （
+const router = (
 	<Router>
 			<App>
 				<Switch>
@@ -28,13 +29,12 @@ const router = （
 				<Route path="/lifestyle" component={Lifestyle}></Route>
 				<Route path="/kids" component={Kids}></Route>
 				<Route path="/upcoming" component={Upcoming}></Route>
-				<Redirect from="*" to="/index"/>
+				
 				</Switch>
 			</App>
 
 	</Router>
 
-
-）
+)
 
 export default router

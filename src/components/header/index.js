@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
 
-class Lifestyle extends Component{
+class Header extends Component{
 
 	render(){
 		return <div>Cosmetics</div>
 	}
 }
 
-export default Lifestyle
+export default Header

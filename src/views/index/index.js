@@ -1,9 +1,9 @@
-import react,{Component} from 'react'
+import React,{Component} from 'react'
 
 class Index extends Component{
 
 	render(){
-		return <div>Cosmetics</div>
+		return <div>index</div>
 	}
 }
 

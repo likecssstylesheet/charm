@@ -1,9 +1,9 @@
-import react,{Component} from 'react'
+import React,{Component} from 'react'
 
 class Kids extends Component{
 
 	render(){
-		return <div>Cosmetics</div>
+		return <div>Kids</div>
 	}
 }
 
