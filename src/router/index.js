@@ -8,7 +8,7 @@ import {
 import App from '../App.js'
 import Index from '../views/indexf'
 import Crossborder from '../views/crossborder'
-import Women from '../views/girls'
+import Women from '../views/women'
 import Men from '../views/men'
 import Cosmetics from '../views/cosmetics'
 import Lifestyle from '../views/lifestyle'
