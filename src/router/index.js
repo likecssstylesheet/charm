@@ -6,9 +6,9 @@ import {
 	Redirect
 }from 'react-router-dom'
 import App from '../App.js'
-import Index from '../views/index'
+import Index from '../views/indexf'
 import Crossborder from '../views/crossborder'
-import Women from '../views/women'
+import Women from '../views/girls'
 import Men from '../views/men'
 import Cosmetics from '../views/cosmetics'
 import Lifestyle from '../views/lifestyle'
@@ -29,7 +29,7 @@ const router = (
 				<Route path="/lifestyle" component={Lifestyle}></Route>
 				<Route path="/kids" component={Kids}></Route>
 				<Route path="/upcoming" component={Upcoming}></Route>
-				
+				<Redirect from="*"  to="/index"/>
 				</Switch>
 			</App>
 
