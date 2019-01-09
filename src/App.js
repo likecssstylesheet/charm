@@ -22,12 +22,15 @@ class App extends Component {
       </div>
     )
   }
-  componentDidMount(){
+  componentWillMount(){
     store.subscribe(()=>{
       this.setState({
         isShow:store.getState().headerReducer
       })
     })
+  }
+  componentDidMount(){
+    
   	window.onscroll=this.scroll.bind(this);
   	
   }
