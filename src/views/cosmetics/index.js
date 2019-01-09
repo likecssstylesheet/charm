@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {getbanner,getdatalist} from './model.js'
+import {getbanner,getdatalist,distype} from './model.js'
 import './index.scss'
 
 class Cosmetics extends Component{
@@ -8,7 +8,8 @@ class Cosmetics extends Component{
 	
 	  this.state = {
 	  	datalist:[],
-	  	banner:null
+	  	banner:null,
+	  	list:[]
 	  };
 	}
 	componentDidMount(){
@@ -21,6 +22,12 @@ class Cosmetics extends Component{
 		getdatalist().then(res=>{
 			this.setState({
 				datalist:res
+			})
+		})
+		distype().then(res=>{
+
+			this.setState({
+				list:res
 			})
 		})
 	}
@@ -38,6 +45,27 @@ class Cosmetics extends Component{
 						</div>
 					</div>
 					:null
+			}
+			{
+				this.state.list.length==0?
+				null
+				:<div className="classify">
+					<ul>
+						{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr}/></li>)}
+					</ul>
+				</div>
+				}
+
+			{
+				this.state.datalist.length==0?
+				null
+				:
+				<div className="nav">
+				{this.state.datalist.map(item=>
+					<div key={item.eventId}>
+						<img src={item.imageUrl} alt=""/>
+					</div>)}
+				</div>
 			}	
 
 		</div>

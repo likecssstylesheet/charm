@@ -1,10 +1,13 @@
 import React,{Component} from 'react'
 import {NavLink,withRouter} from 'react-router-dom'
 import './index.scss'
+import {connect} from 'react-redux'
 
 class Header extends Component{
 	render(){
-		return <div className="allheader">
+		return <div className="allheader" style={this.props.isWhite?{background:'white',
+		color:'black'}:null}>
+
 				<ul className="head">
 					<li className="first"><span>登录</span></li>
 					<li className="two"><div><i className="iconfont icon-sousuo"> </i><a>RED VALENTINO 全场1折起</a></div></li>
@@ -12,9 +15,9 @@ class Header extends Component{
 				</ul>
 				<div className="alltab">
 
-				<ul className="tabbar">
+				<ul className="tabbar"  >
 					<li >
-						<NavLink to="/index" replace activeClassName="active">推荐</NavLink>
+						<NavLink to="/index" replace activeClassName="active" >推荐</NavLink>
 					</li>
 					<li>
 						<NavLink to="/crossborder" replace activeClassName="active">海外</NavLink>
@@ -43,4 +46,6 @@ class Header extends Component{
 	}
 }
 
-export default withRouter(Header)
+export default withRouter(connect((state)=>{
+	return {isWhite:state.whiteReducer}
+})(Header))

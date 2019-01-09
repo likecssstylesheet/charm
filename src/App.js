@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header'
 import store from './store'
+import {connect} from 'react-redux'
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +26,35 @@ class App extends Component {
       </div>
     )
   }
+  componentDidMount(){
+  	window.onscroll=this.scroll.bind(this);
+  	console.log(this.props.changeopacity)
+  }
+  scroll(){
+  		console.log(document.documentElement.scrollTop)
+  		if(document.documentElement.scrollTop>0){
+  			this.props.changewhite()
+  		}
+  		else{
+  			this.props.changeopacity()
+  		}
+  }
 }
 
-export default App;
+export default connect(
+	null,
+	{
+	changewhite(){
+			return {
+				type:'white',
+				payload:true
+			}
+		},
+	changeopacity(){
+			return {
+				type:'noWhite',
+				payload:false
+			}
+		}
+	}
+)(App);

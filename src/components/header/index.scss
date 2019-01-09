@@ -33,9 +33,9 @@ ul.tabbar{
 	li{
 		
 		 line-height:50px;		
-		a{
+		a{	
 			color:white;			
-			font-size:16px;
+			font-size:14px;
 		}
 	}
 }
@@ -60,7 +60,7 @@ ul.head{
 		width:13.5%;
 		text-align:center;
 		line-height:40px;
-		font-size:16px;
+		font-size:14px;
 		
 	}
 	li.two{
@@ -72,16 +72,14 @@ ul.head{
 				width:250px;
 				opacity:0.5;
 				line-height:34px;
-				span{
-					font-size:12px;
-				}
+				font-size:14px;
 
 			}
 	}
 	li.last{
 		width:12.5%;
 		i{
-			font-size:30px;
+			font-size:24px;
 		}
 	}
 }

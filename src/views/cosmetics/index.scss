@@ -15,8 +15,37 @@
 		color:white;
 		p.first{
 			font-weight:700;
-			font-size:24px;
+			font-size:26px;
 		}
 
+	}
+}
+
+.classify{
+	
+	overflow:hidden;
+	margin-bottom:10px;
+	ul{display:flex;
+		width:100%;
+		justify-content:space-around;
+		li{padding:5px;
+			
+			img{
+				width:62px;
+				
+			}
+		}
+	}
+}
+
+div.nav{
+	overflow:hidden;
+	div{
+		width:100%;
+		
+		img{
+			margin-left:4%;
+			width:92%;
+		}
 	}
 }

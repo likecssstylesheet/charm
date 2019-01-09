@@ -15,10 +15,12 @@ import Lifestyle from '../views/lifestyle'
 import Kids from '../views/kids'
 import Upcoming from '../views/upcoming'
 import produceDetail from '../views/produceDetail'
-
+import {Provider} from 'react-redux'
+import store from '../store/index.js'
 
 
 const router = (
+	<Provider store={store}>
 	<Router>
 			<App>
 				<Switch>
@@ -37,7 +39,7 @@ const router = (
 			</App>
 
 	</Router>
-
+	</Provider>
 )
 
 export default router
