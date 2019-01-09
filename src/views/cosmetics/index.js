@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {getbanner,getdatalist,distype} from './model.js'
 import './index.scss'
 import Footer from '../../components/footer'
+import Main from './children'
 
 class Cosmetics extends Component{
 	constructor(props) {
@@ -20,11 +21,7 @@ class Cosmetics extends Component{
 				banner:res
 			})
 		})
-		getdatalist().then(res=>{
-			this.setState({
-				datalist:res
-			})
-		})
+	
 		distype().then(res=>{
 
 			this.setState({
@@ -47,32 +44,18 @@ class Cosmetics extends Component{
 					</div>
 					:null
 			}
+
 			{
 				this.state.list.length==0?
 				null
 				:<div className="classify">
 					<ul>
-						{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr}/></li>)}
+						{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr} alt=""/></li>)}
 					</ul>
 				</div>
 				}
 
-			{
-				this.state.datalist.length==0?
-				null
-				:
-				<div className="nav">
-				{this.state.datalist.map(item=>
-					<div key={item.eventId} className="content">
-						<div className="description">
-							<p>{item.englishName}</p>
-							<p>{item.chineseName}</p>
-							<p>{item.discountText}</p>
-						</div>
-						<img src={item.imageUrl} alt=""/>
-					</div>)}
-				</div>
-			}
+			<Main></Main>
 			<Footer></Footer>	
 
 		</div>
