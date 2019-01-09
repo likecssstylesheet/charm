@@ -1,10 +1,11 @@
 #indexf{
 	width: 100%;
-	img{
-		width: 100%
-	}
+	overflow: hidden;
 	.banner{
 		position:relative;
+		img{
+			width: 100%
+		}
 		.title{
 			position: absolute;
 			left: 50%;
@@ -17,4 +18,56 @@
 			}
 		}
 	}
+	.content{
+		box-sizing: border-box;
+		margin:20px 3% 10px ;
+		.hotday{
+			width:35%;
+			margin-bottom:10px;
+			margin-top: 20px;
+		}
+		ul{
+			li{
+				margin-bottom: 10px;
+				position: relative;
+				img{
+					width: 100%;
+				}
+				div{
+					width: 100%;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					color: #fff;
+					padding-left:3%;
+					padding-bottom:5px;
+					span{
+						font-size: 18px;
+						margin-bottom:3px;
+					}
+					p{
+						font-size: 14px;
+						margin-bottom:3px;
+					}
+				}
+			}
+		}
+		.moreEven{
+			margin:20px 0 0 0;
+			height: 160px;
+			img{
+				width: 49%;
+				float: left
+			}
+			.more{
+				width: 53%;
+				margin-bottom:15px;
+				margin-top: 20px;
+			}
+			.right{
+				float: right;
+			}
+		}
+	}
+
 };

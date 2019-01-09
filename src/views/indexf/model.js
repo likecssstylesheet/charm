@@ -17,5 +17,18 @@ function getBanner2(){
 	})
 }
 
-
-export {getBanner,getBanner2}
+function getDayContent(){
+	return axios({
+		url:'http://www.mei.com/appapi/home/eventForH5?params=%7B%7D&timestamp=1547002715880&summary=b409b5bd5a5decd6939224e3c728bce8&platform_code=H5'
+	}).then(res=>{
+		return res.data.lists[0].events
+	})
+}
+function getHotContent(){
+	return axios({
+		url:'http://www.mei.com/appapi/home/eventForH5?params=%7B%7D&timestamp=1547002715880&summary=b409b5bd5a5decd6939224e3c728bce8&platform_code=H5'
+	}).then(res=>{
+		return res.data.lists[1].events
+	})
+}
+export {getBanner,getBanner2,getHotContent,getDayContent}
