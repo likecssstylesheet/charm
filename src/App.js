@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/header'
 import store from './store'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom' 
 
 class App extends Component {
   constructor(props) {
@@ -41,20 +42,20 @@ class App extends Component {
   }
 }
 
-export default connect(
-	null,
-	{
-	changewhite(){
-			return {
-				type:'white',
-				payload:true
-			}
-		},
-	changeopacity(){
-			return {
-				type:'noWhite',
-				payload:false
-			}
-		}
-	}
-)(App);
+export default withRouter(connect(
+  null,
+  {
+  changewhite(){
+      return {
+        type:'white',
+        payload:true
+      }
+    },
+  changeopacity(){
+      return {
+        type:'noWhite',
+        payload:false
+      }
+    }
+  }
+)(App))
