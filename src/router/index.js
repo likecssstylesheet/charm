@@ -17,6 +17,7 @@ import Upcoming from '../views/upcoming'
 import produceDetail from '../views/produceDetail'
 import {Provider} from 'react-redux'
 import store from '../store/index.js'
+import Gift from '../views/gift'
 
 const router = (
 	<Provider store={store}>
@@ -31,6 +32,10 @@ const router = (
 					<Route path="/lifestyle" component={Lifestyle}></Route>
 					<Route path="/kids" component={Kids}></Route>
 					<Route path="/upcoming" component={Upcoming}></Route>
+<<<<<<< HEAD
+=======
+					<Route path="/gift" component={Gift}></Route>
+>>>>>>> 866c4a99766586e690767f0452e7bc3ec67cd388
 					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
 
 					<Redirect from="*"  to="/index"/>
