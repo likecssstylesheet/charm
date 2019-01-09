@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {NavLink,withRouter} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import './index.scss'
 import {connect} from 'react-redux'
 import axios from 'axios'
@@ -24,7 +24,7 @@ class Header extends Component{
 		return <div className="allheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>
 				<ul className="head">
 					<li className="first"><span>登录</span></li>
-					<li className="two"><div onClick={this.handle.bind(this)}><i className="iconfont icon-sousuo"> </i><a>{this.state.content}</a></div></li>
+					<li className="two"><div onClick={this.handle.bind(this)}><i className="iconfont icon-sousuo"> </i>{this.state.content}</div></li>
 					<li className="last"><i className="iconfont icon-baozhuanhuan"></i></li>
 				</ul>
 				<div className="alltab">
