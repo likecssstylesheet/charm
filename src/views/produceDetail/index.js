@@ -4,6 +4,7 @@ import './index.scss'
 import Head from './head'
 import store from '../../store'
 import Swipe from './swipe'
+import Des from './Des'
 
 class Produce extends Component{
 
@@ -22,11 +23,16 @@ class Produce extends Component{
 				{this.state.productData&&this.state.productPrice?
 					<div>
 					<Head>
-						<span>{this.state.productData.infos.brand}</span>
-						<span>{this.state.productPrice.retDto.price}</span>
-				</Head>
+						<span className="productName">{this.state.productData.infos.brand}</span>
+						<span className="productPrice">￥{this.state.productPrice.retDto.price}</span>
+					</Head>
 				<div className="cont">
-					 <Swipe data={this.state.productData.infos.images}></Swipe>
+					<div className="swipe">
+						<Swipe data={this.state.productData.infos.images}></Swipe>
+					</div>
+					<div className="des">
+						<Des data={this.state.productData.infos}></Des>
+					</div>
 				</div>
 				</div>
 				:null

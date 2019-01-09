@@ -6,7 +6,7 @@ class App extends Component {
   
     this.state = {
       data: ['1', '2', '3','4'],
-      imgHeight: 300,
+      imgHeight: 440,
     };
   }
   componentDidMount() {
@@ -19,14 +19,15 @@ class App extends Component {
           autoplay={true}
           infinite={true}
           dots={true}
-          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-          afterChange={index => console.log('slide to', index)}
+          // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+          //afterChange={index => console.log('slide to', index)}
         >
           {this.props.data.map(val => (
             <a
               key={val}
               href=""
               style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+              className="swipe"
             >
               <img
                 src={`${val.bigImgUrl}`}
@@ -35,7 +36,7 @@ class App extends Component {
                 onLoad={() => {
                   // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: '300' });
+                  this.setState({ imgHeight: '440' });
                 }}
               />
             </a>
