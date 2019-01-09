@@ -18,7 +18,6 @@ import produceDetail from '../views/produceDetail'
 import {Provider} from 'react-redux'
 import store from '../store/index.js'
 
-
 const router = (
 	<Provider store={store}>
 	<Router>
