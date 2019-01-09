@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {getbanner,getdatalist,distype} from './model.js'
 import './index.scss'
+import Footer from '../../components/footer'
 
 class Cosmetics extends Component{
 	constructor(props) {
@@ -71,7 +72,8 @@ class Cosmetics extends Component{
 						<img src={item.imageUrl} alt=""/>
 					</div>)}
 				</div>
-			}	
+			}
+			<Footer></Footer>	
 
 		</div>
 	}
