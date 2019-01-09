@@ -31,6 +31,7 @@ const router = (
 				<Route path="/kids" component={Kids}></Route>
 				<Route path="/upcoming" component={Upcoming}></Route>
 				<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+
 				<Redirect from="*"  to="/index"/>
 				</Switch>
 			</App>
