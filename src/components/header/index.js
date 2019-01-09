@@ -3,7 +3,6 @@ import {NavLink,withRouter} from 'react-router-dom'
 import './index.scss'
 
 class Header extends Component{
-
 	render(){
 		return <div className="allheader">
 				<ul className="head">

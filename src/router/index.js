@@ -14,7 +14,11 @@ import Cosmetics from '../views/cosmetics'
 import Lifestyle from '../views/lifestyle'
 import Kids from '../views/kids'
 import Upcoming from '../views/upcoming'
+<<<<<<< HEAD
 // import produceDetail from '../components/produceDetail'
+=======
+import produceDetail from '../views/produceDetail'
+>>>>>>> 380250ab2ee67e2aba5522bb3ce27b9c7ab65129
 
 
 
@@ -30,7 +34,11 @@ const router = (
 				<Route path="/lifestyle" component={Lifestyle}></Route>
 				<Route path="/kids" component={Kids}></Route>
 				<Route path="/upcoming" component={Upcoming}></Route>
+<<<<<<< HEAD
 				{/*<Route path="/producedetail/:data" component={produceDetail} exact></Route>*/}
+=======
+				<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+>>>>>>> 380250ab2ee67e2aba5522bb3ce27b9c7ab65129
 				<Redirect from="*"  to="/index"/>
 				</Switch>
 			</App>
