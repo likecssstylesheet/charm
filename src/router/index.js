@@ -32,12 +32,11 @@ const router = (
 					<Route path="/lifestyle" component={Lifestyle}></Route>
 					<Route path="/kids" component={Kids}></Route>
 					<Route path="/upcoming" component={Upcoming}></Route>
-
 					<Route path="/gift" component={Gift}></Route>
 
 					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
 
-					<Redirect from="*"  to="/index"/>
+					<Redirect from="*" to="/index"/>
 					</Switch>
 				</App>
 
