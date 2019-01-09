@@ -16,7 +16,6 @@ import Kids from '../views/kids'
 import Upcoming from '../views/upcoming'
 
 
-
 const router = (
 	<Router>
 			<App>
