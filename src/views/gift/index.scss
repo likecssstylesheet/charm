@@ -1,0 +1,81 @@
+#gift{
+	img{
+		width: 100%;
+	}
+	.pledge{
+		background:url('/images/slogan.png') center no-repeat;
+		margin:10px 10% 0;
+		height: 30px;
+		background-size: contain;
+		box-sizing: border-box;
+	}
+	.content{
+		height: 150px;
+		box-sizing: border-box;
+		padding:10px 5% 10px;
+		background:url('/images/money.png') center no-repeat;
+		background-size: contain;
+	}
+	.left{
+		width: 40%;
+		float: left;
+		height: 130px;
+		line-height:130px;
+		text-align: center;
+		color: #dd2828;
+		font-size: 30px;
+		font-weight: 600;
+		span{
+			font-size: 20px
+		}
+	}
+	.right{
+		float: left;
+		width: 45%;
+		height: 120px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		box-sizing: border-box;
+		span{
+			display: block;
+			margin-bottom: 10px;
+		}
+		.one{
+			display: inline-block;
+			background:#ec4b4b;
+			color: #fff;
+			font-weight: 600;
+			font-size: 12px;
+		}
+		.two,.three{
+			color:#000;
+			font-weight: 600;
+			font-size: 14px
+		}
+		.time{
+			margin:0;
+			margin-top: 10px;
+			font-size:10px;
+			color: #666
+		}
+	}
+		.acquire{
+			width: 15%;
+			color: #fff;
+			height: 130px;
+			float: right;
+			align-items:center;
+			position: relative;
+			p{
+				width: 20px;
+				height:80px;
+				display: inline-block;
+				text-align: center;
+				font-weight: 700;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%)
+			}
+		}
+}
