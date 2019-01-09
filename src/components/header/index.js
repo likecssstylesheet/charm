@@ -59,7 +59,7 @@ class Header extends Component{
 	</div>	
 	}
 	handle(){
-		this.props.chuandi.history.push('/kids')
+		this.props.chuandi.history.push('/input')
 	}
 }
 

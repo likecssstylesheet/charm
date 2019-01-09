@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div >
-            {this.state.isShow?<Header  chuandi={this.props}></Header>:null}
+            {this.state.isShow?<Header chuandi={this.props}></Header>:null}
             {this.props.children}
       </div>
     )
