@@ -29,10 +29,8 @@ class App extends Component {
       })
     })
   }
-  componentDidMount(){
-    
-  	window.onscroll=this.scroll.bind(this);
-  	
+  componentDidMount(){  
+  	window.onscroll=this.scroll.bind(this);	
   }
   scroll(){
   	

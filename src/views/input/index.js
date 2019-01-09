@@ -4,7 +4,7 @@ import './index.scss'
 
 class Input extends Component{
 	render(){
-		return <div>
+		return <div class="all">
 				<div className="header">
 					
 						<div className="up">
@@ -18,18 +18,24 @@ class Input extends Component{
 					<div onClick={this.click.bind(this)} className="down">取消</div>
 				</div>
 				<h3 className="history">
-					搜索历史 <i></i>
+					搜索发现 <i></i>
 				</h3>
-				<div>
+				<div className="list">
 					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li>羽绒服</li>
+						<li>包袋</li>
+						<li>靴子</li>
+					</ul>
+					<ul>
+						<li>GUCCI</li>
+						<li>彩妆</li>
+						<li>厨房</li>
 					</ul>
 				</div>
+				<h3>
+					搜索历史	<i></i>
+				</h3>
+
 		</div>
 	}
 	click(){

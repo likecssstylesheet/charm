@@ -5,6 +5,7 @@ import Head from './head'
 import store from '../../store'
 import Swipe from './swipe'
 import Des from './Des'
+import {connect} from 'react-redux'
 
 class Produce extends Component{
 
@@ -24,8 +25,8 @@ class Produce extends Component{
 					<div>
 					<Head>
 						<span className="productName">{this.state.productData.infos.brand}</span>
-						<span className="productPrice">￥{this.state.productPrice.retDto.price}</span>
-					</Head>
+						<span className="productPrice">{this.state.productPrice.retDto.price}</span>
+				</Head>
 				<div className="cont">
 					<div className="swipe">
 						<Swipe data={this.state.productData.infos.images}></Swipe>
@@ -42,19 +43,13 @@ class Produce extends Component{
 	}
 
 	componentWillMount(){
-		store.dispatch({
-			type:"Hideheader", 
-			payload:false  
-		})
-		// this.props.hide();
+		
+		this.props.hide();
 	}
 
 	componentWillUnmount(){
-		store.dispatch({
-			type:"Showheader", 
-			payload:true  
-		})
-		// this.props.show();
+		
+		this.props.show();
 	}
 	componentDidMount(){
 		axios({
@@ -89,4 +84,20 @@ function time(){
 	return date.getTime();
 }
 
-export default Produce
+export default connect(
+  null,
+  {
+  hide(){
+      return {
+        type:"Hideheader", 
+		payload:false  
+      }
+    },
+  show(){
+      return {
+        type:"Showheader", 
+		payload:true 
+      }
+    }
+  }
+)(Produce)
