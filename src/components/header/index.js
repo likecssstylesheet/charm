@@ -3,12 +3,11 @@ import {NavLink,withRouter} from 'react-router-dom'
 import './index.scss'
 
 class Header extends Component{
-
 	render(){
 		return <div className="allheader">
 				<ul className="head">
 					<li className="first"><span>登录</span></li>
-					<li className="two"><div><i className="iconfont icon-sousuo"> </i><span>RED VALENTINO 全场1折起</span></div></li>
+					<li className="two"><div><i className="iconfont icon-sousuo"> </i><a>RED VALENTINO 全场1折起</a></div></li>
 					<li className="last"><i className="iconfont icon-baozhuanhuan"></i></li>
 				</ul>
 				<div className="alltab">
