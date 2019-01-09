@@ -1,5 +1,5 @@
-import {getBanner,getBanner2,getHotContent,getDayContent} from './model.js'
 import React,{Component} from 'react'
+import {getBanner,getBanner2,getHotContent,getDayContent} from './model.js'
 import Footer from '../../components/footer'
 import './index.scss'
 
