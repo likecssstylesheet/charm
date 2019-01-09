@@ -10,26 +10,20 @@ class App extends Component {
     super(props);
   
     this.state = {
-    	isShow:true,
-    	content:''
+    	content:'',
+      isShow:true
     }
   }
   render() {
     return (
       <div >
-            {this.state.isShow?<Header chuandi={this.props}></Header>:null}
+            {this.props.isShow?<Header chuandi={this.props}></Header>:null}
             {this.props.children}
       </div>
     )
   }
   componentDidMount(){
-    store.subscribe(()=>{
-      this.setState({
-        isShow:store.getState().headerReducer
-      })
-    })
   	window.onscroll=this.scroll.bind(this);
-  	
   }
   scroll(){
   	
@@ -43,7 +37,11 @@ class App extends Component {
 }
 
 export default withRouter(connect(
-  null,
+  (state)=>{
+      return {
+        isShow:state.headerReducer
+      }
+    },
   {
   changewhite(){
       return {
