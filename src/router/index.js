@@ -17,27 +17,31 @@ import Upcoming from '../views/upcoming'
 import produceDetail from '../views/produceDetail'
 import {Provider} from 'react-redux'
 import store from '../store/index.js'
+import Gift from '../views/gift'
 
 const router = (
 	<Provider store={store}>
-	<Router>
-			<App>
-				<Switch>
-				<Route path="/index" component={Index}></Route>
-				<Route path="/crossborder" component={Crossborder}></Route>
-				<Route path="/women" component={Women}></Route>
-				<Route path="/men" component={Men}></Route>
-				<Route path="/cosmetics" component={Cosmetics}></Route>
-				<Route path="/lifestyle" component={Lifestyle}></Route>
-				<Route path="/kids" component={Kids}></Route>
-				<Route path="/upcoming" component={Upcoming}></Route>
-				<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+		<Router>
+				<App>
+					<Switch>
+					<Route path="/index" component={Index}></Route>
+					<Route path="/crossborder" component={Crossborder}></Route>
+					<Route path="/women" component={Women}></Route>
+					<Route path="/men" component={Men}></Route>
+					<Route path="/cosmetics" component={Cosmetics}></Route>
+					<Route path="/lifestyle" component={Lifestyle}></Route>
+					<Route path="/kids" component={Kids}></Route>
+					<Route path="/upcoming" component={Upcoming}></Route>
 
-				<Redirect from="*"  to="/index"/>
-				</Switch>
-			</App>
+					<Route path="/gift" component={Gift}></Route>
 
-	</Router>
+					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+
+					<Redirect from="*"  to="/index"/>
+					</Switch>
+				</App>
+
+		</Router>
 	</Provider>
 )
 

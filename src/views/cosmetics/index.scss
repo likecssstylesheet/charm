@@ -13,10 +13,15 @@
 		transform:translateX(-50%);
 		text-align:center;
 		color:white;
+		p{
+			margin-bottom: 5px;
+		}
 		p.first{
 			font-weight:700;
 			font-size:26px;
+			
 		}
+
 
 	}
 }
@@ -46,6 +51,19 @@ div.nav{
 		img{
 			margin-left:4%;
 			width:92%;
+		}
+	}
+}
+div.content{
+	width:100%;
+	position:relative;
+	.description{
+		margin-left:6%;
+		position:absolute;
+		bottom:10px;
+		left:6px;
+		p{	margin:4px 0;
+			color:white;
 		}
 	}
 }
