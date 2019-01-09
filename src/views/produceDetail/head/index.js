@@ -8,7 +8,12 @@ class Head extends Component{
 			<div className="back">
 				<span className="iconfont icon-jiantou4"></span>	
 			</div>
-			<div></div>
+			<div className="data">
+				{this.props.children}
+			</div>
+			<div className="menu">
+			    <span className="iconfont icon-caidan"></span>
+			</div>
 		</div>
 
 	}

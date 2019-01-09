@@ -1,16 +1,28 @@
 #headPendulum{
 	display: flex;
 	height:44px;
-	div.back{
+	div{
 		width:50px;
 		text-align:center;
 		height:100%;
-		span{
+	}
+	span.iconfont{
 			display: inline-block;
 			height:100%;
 			width:100%;
 			line-height:44px;
 			font-size:18px;
+		}
+	div.data{
+		flex:1;
+		display: flex;
+		flex-direction:column;
+		span{
+			flex:1;
+			display: block;
+			width:100%;
+			height:auto;
+			line-height:auto;
 		}
 	}
 }
