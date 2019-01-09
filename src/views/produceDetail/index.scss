@@ -1,5 +1,91 @@
 #detail{
+	background:#fff;
 	div.cont{
 		padding:0 6%;
+		div.swipe{
+			box-shadow: #eee 2px 2px 2px,#eee -2px 0 2px;
+			margin-bottom:10px;
+		}
+		div.desp{
+			h1{
+				font-size: 19px;
+				font-weight: 400;
+				padding-bottom:10px;
+				margin:0;
+			}
+			del{
+				font-size:12px;
+				display: block;
+				color:#ccc;
+				padding:5px 0px;
+			}
+			strong{
+				font-size:16px;
+				color:#f00;
+			}
+			a{
+				border:1px solid #000;
+				font-size:12px;
+				margin-left:15px;
+				display: inline-block;
+				padding:2px;
+			}
+			div.guess{
+				margin-top:10px;
+				border-bottom:1px solid #eee;
+				span{
+					font-size:13px;
+					color:#666;
+					padding-bottom:30px;
+					display:inline-block;
+				}
+			}
+			div.lis{
+				padding:20px 0;
+				border-bottom:1px solid #eee;
+				overflow:hidden;
+			}
+			div.title{
+				color:#666;
+				font-size:14px;
+				width:50px;
+				height:32px;
+				float:left;
+			}
+			div.discounts span{
+				background:#f00;
+				color:#fff;
+				font-size:12px;
+				padding:2px;
+			}
+			div.promotion span{
+				display: block;
+				overflow: hidden;
+    			text-overflow: ellipsis;
+    			white-space: nowrap;
+    			color:#dd2828;
+    			font-weight: 700;
+			}
+			div.serve span{
+				font-size:12px;
+				padding:0 10px;
+				display: inline;
+				border-right:1px solid #666;
+				color:#666;
+			}
+			div.serve span:nth-of-type(1){
+				padding-left:0;
+			}
+			div.serve span:last-child{
+				// padding-left:0;
+				border:none;
+			}
+			div.size span{
+				background:#f4f4f4;
+				padding:3px 5px;
+				margin-right:10px;
+			}
+
+		}
 	}
 }

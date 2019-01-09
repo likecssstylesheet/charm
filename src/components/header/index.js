@@ -2,13 +2,29 @@ import React,{Component} from 'react'
 import {NavLink,withRouter} from 'react-router-dom'
 import './index.scss'
 import {connect} from 'react-redux'
+import axios from 'axios'
 
 class Header extends Component{
+	constructor(props) {
+	  super(props);
+	
+	  this.state = {
+	  	content:''
+	  };
+	}
+
+	componentDidMount(){
+		axios('http://www.mei.com/appapi/search/searchDefault/v3').then(res=>{
+  		this.setState({
+  			content:res.data.words
+  		})
+  	})
+	}
 	render(){
 		return <div className="allheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>
 				<ul className="head">
 					<li className="first"><span>登录</span></li>
-					<li className="two"><div><i className="iconfont icon-sousuo"> </i><a>RED VALENTINO 全场1折起</a></div></li>
+					<li className="two"><div onClick={this.handle.bind(this)}><i className="iconfont icon-sousuo"> </i><a>{this.state.content}</a></div></li>
 					<li className="last"><i className="iconfont icon-baozhuanhuan"></i></li>
 				</ul>
 				<div className="alltab">
@@ -41,6 +57,9 @@ class Header extends Component{
 				</ul>
 		</div>
 	</div>	
+	}
+	handle(){
+		this.props.chuandi.history.push('/input')
 	}
 }
 

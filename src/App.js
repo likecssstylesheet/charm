@@ -3,13 +3,15 @@ import Header from './components/header'
 import store from './store'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom' 
+import axios from 'axios'
 
 class App extends Component {
   constructor(props) {
     super(props);
   
     this.state = {
-    	isShow:true
+    	isShow:true,
+    	content:''
     }
   }
   componentWillMount(){
@@ -22,12 +24,13 @@ class App extends Component {
   render() {
     return (
       <div >
-            {this.state.isShow?<Header></Header>:null}
+            {this.state.isShow?<Header chuandi={this.props}></Header>:null}
             {this.props.children}
       </div>
     )
   }
   componentDidMount(){
+
   	window.onscroll=this.scroll.bind(this);
   	
   }

@@ -1,6 +1,10 @@
 #headPendulum{
 	display: flex;
 	height:44px;
+	// position:fixed;
+	// left:0;
+	// top:0;
+	width:100%;
 	div{
 		width:50px;
 		text-align:center;
@@ -16,6 +20,8 @@
 	div.data{
 		flex:1;
 		display: flex;
+		box-sizing: border-box;
+		padding-top:10px;
 		flex-direction:column;
 		span{
 			flex:1;
@@ -23,6 +29,15 @@
 			width:100%;
 			height:auto;
 			line-height:auto;
+			z-index:2;
+		}
+		span.productPrice{
+			color:#dd2828;
+			font-weight: 800;
+			font-size:12px;
+		}
+		span.productName{
+			font-weight: 800;
 		}
 	}
 }
