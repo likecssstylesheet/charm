@@ -15,6 +15,8 @@ import Lifestyle from '../views/lifestyle'
 import Kids from '../views/kids'
 import Upcoming from '../views/upcoming'
 import produceDetail from '../views/produceDetail'
+import Brand from '../views/brand'
+import Productlist from '../views/productlist'
 import {Provider} from 'react-redux'
 import store from '../store/index.js'
 import Gift from '../views/gift'
@@ -38,6 +40,8 @@ const router = (
 					<Route path="/input" component={Inputfind}></Route>
 
 					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+					<Route path="/brand/:id" component={Brand}></Route>
+					<Route path="/productlist/:id" component={Productlist}></Route>
 
 					<Redirect from="*" to="/index"/>
 					</Switch>
