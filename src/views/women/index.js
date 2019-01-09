@@ -36,7 +36,7 @@ class Girls extends Component{
 				{
 					this.state.looplist.map(item => {
 						return	<div key={item.id} className="first">
-									<img src={item.main_image} className="banner" alt=""/>
+										<NavLink to=""><img src={item.main_image} className="banner" alt=""/></NavLink>
 									<div className="info">
 										<h3>{item.main_title}</h3>
 										<p>{item.sub_title}</p>
