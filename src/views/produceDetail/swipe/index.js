@@ -23,23 +23,18 @@ class App extends Component {
           //afterChange={index => console.log('slide to', index)}
         >
           {this.props.data.map(val => (
-            <a
-              key={val}
-              href=""
-              style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
-              className="swipe"
-            >
+          
               <img
                 src={`${val.bigImgUrl}`}
-                alt=""
+                alt="aaa"
                 style={{ width: '100%', verticalAlign: 'top' }}
+                key={val}
                 onLoad={() => {
                   // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
                   this.setState({ imgHeight: '440' });
                 }}
               />
-            </a>
           ))}
         </Carousel>
       </WingBlank>
