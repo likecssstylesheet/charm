@@ -1,16 +1,33 @@
 import React,{Component} from 'react'
 import axios from 'axios'
 import './index.scss'
-
+import Head from './head'
+import store from '../../store'
 
 class Produce extends Component{
 
 	render(){
 		return (
 			<div id="detail">
-				
+				<Head></Head>
 			</div>
 			)
+	}
+
+	componentWillMount(){
+		store.dispatch({
+			type:"Hideheader", 
+			payload:false  
+		})
+		// this.props.hide();
+	}
+
+	componentWillUnmount(){
+		store.dispatch({
+			type:"Showheader", 
+			payload:true  
+		})
+		// this.props.show();
 	}
 	componentDidMount(){
 		axios({
