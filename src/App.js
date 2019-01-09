@@ -14,13 +14,6 @@ class App extends Component {
     	content:''
     }
   }
-  componentWillMount(){
-		store.subscribe(()=>{
-			this.setState({
-				isShow:store.getState().headerReducer
-			})
-		})
-	}
   render() {
     return (
       <div >
@@ -29,10 +22,15 @@ class App extends Component {
       </div>
     )
   }
-  componentDidMount(){
-
-  	window.onscroll=this.scroll.bind(this);
-  	
+  componentWillMount(){
+    store.subscribe(()=>{
+      this.setState({
+        isShow:store.getState().headerReducer
+      })
+    })
+  }
+  componentDidMount(){  
+  	window.onscroll=this.scroll.bind(this);	
   }
   scroll(){
   	

@@ -1,3 +1,5 @@
+.all{background:white;
+	height:667px;}
 .header{
 	height:44px;
 	display:flex;
@@ -29,8 +31,34 @@
 		line-height:43px;
 	}
 }
-.history{
-	font-weight:11;
-	margin-left:20px;
 
+.list{
+	box-sizing:border-box;
+	padding:20px;
+	height:136px;
+	ul{
+		display:flex;
+		justify-content:space-between;
+		margin-bottom:15px;
+		li{
+			width:103px;
+			height:35px;
+			text-align:center;
+			line-height:35px;
+			background:#eee;
+		}
+	}
 }
+h3{
+	font-weight:11;
+	margin:10px 0 0px 20px;
+}
+.history{
+	position:relative;
+	i{
+		position:absolute;
+		right:30px;
+		font-size:18px;
+	}
+}
+
