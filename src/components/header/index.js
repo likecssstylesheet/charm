@@ -5,9 +5,7 @@ import {connect} from 'react-redux'
 
 class Header extends Component{
 	render(){
-		return <div className="allheader" style={this.props.isWhite?{background:'white',
-		color:'black'}:null}>
-
+		return <div className="allheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>
 				<ul className="head">
 					<li className="first"><span>登录</span></li>
 					<li className="two"><div><i className="iconfont icon-sousuo"> </i><a>RED VALENTINO 全场1折起</a></div></li>
@@ -17,28 +15,28 @@ class Header extends Component{
 
 				<ul className="tabbar"  >
 					<li >
-						<NavLink to="/index" replace activeClassName="active" >推荐</NavLink>
+						<NavLink to="/index" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>推荐</NavLink>
 					</li>
 					<li>
-						<NavLink to="/crossborder" replace activeClassName="active">海外</NavLink>
+						<NavLink to="/crossborder" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>海外</NavLink>
 					</li>
 					<li>
-						<NavLink to="/women" replace activeClassName="active">女士</NavLink>
+						<NavLink to="/women" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>女士</NavLink>
 					</li>
 					<li>
-						<NavLink to="/men" replace activeClassName="active">男生</NavLink>
+						<NavLink to="/men" replace activeClassName="active" style={this.props.isWhite?{background:'white',color:'black'}:null}>男生</NavLink>
 					</li>
 					<li>
-						<NavLink to="/cosmetics" replace activeClassName="active">美妆</NavLink>
+						<NavLink to="/cosmetics" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>美妆</NavLink>
 					</li>
 					<li>
-						<NavLink to="lifestyle" replace activeClassName="active">家居</NavLink>
+						<NavLink to="lifestyle" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>家居</NavLink>
 					</li>
 					<li>
-						<NavLink to="/kids" replace activeClassName="active">婴童</NavLink>
+						<NavLink to="/kids" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>婴童</NavLink>
 					</li>
 					<li>
-						<NavLink to="/upcoming" replace activeClassName="active">即将上线</NavLink>
+						<NavLink to="/upcoming" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>即将上线</NavLink>
 					</li>
 				</ul>
 		</div>
@@ -46,6 +44,6 @@ class Header extends Component{
 	}
 }
 
-export default withRouter(connect((state)=>{
+export default connect((state)=>{
 	return {isWhite:state.whiteReducer}
-})(Header))
+})(Header)
