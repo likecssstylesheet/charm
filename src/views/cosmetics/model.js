@@ -8,7 +8,7 @@ function getbanner(){
 
 function getdatalist(){
 
-	return axios.get('http://www.mei.com/appapi/silo/eventForH5?categoryId=lifestyle&pageIndex=1&timestamp=1546996688146&summary=7a6a56e9d07c6000db554d90ac493c9f&platform_code=H5')
+	return axios.get('http://www.mei.com/appapi/silo/eventForH5?categoryId=cosmetics&pageIndex=1&timestamp=1547019121628&summary=d9cec4d1a1d4499a8c39fe0725ebe059&platform_code=H5')
 	.then(res=>res.data.eventList)
 }
 

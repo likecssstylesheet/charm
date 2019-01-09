@@ -62,7 +62,12 @@ class Cosmetics extends Component{
 				:
 				<div className="nav">
 				{this.state.datalist.map(item=>
-					<div key={item.eventId}>
+					<div key={item.eventId} className="content">
+						<div className="description">
+							<p>{item.englishName}</p>
+							<p>{item.chineseName}</p>
+							<p>{item.discountText}</p>
+						</div>
 						<img src={item.imageUrl} alt=""/>
 					</div>)}
 				</div>

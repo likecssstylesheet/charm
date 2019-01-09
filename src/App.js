@@ -29,10 +29,10 @@ class App extends Component {
   }
   componentDidMount(){
   	window.onscroll=this.scroll.bind(this);
-  	console.log(this.props.changeopacity)
+  	
   }
   scroll(){
-  		console.log(document.documentElement.scrollTop)
+  	
   		if(document.documentElement.scrollTop>0){
   			this.props.changewhite()
   		}
