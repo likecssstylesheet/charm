@@ -1,11 +1,9 @@
 import axios from 'axios' 
-
-function getBrandInfo() {
+function getBrandInfo(num) {
 	return axios({
-		url: 'http://www.mei.com/appapi/brand/brandInfo/v3'
+		url: `http://www.mei.com/appapi/brand/viewCms/v3?logoId=${num}`
 	}).then(res => {
-		// console.log(res.data.banners)
-		return res.data.brandInfo
+		return res.data.body.brandDetail
 	})
 }
 
