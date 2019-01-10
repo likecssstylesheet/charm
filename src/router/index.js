@@ -21,31 +21,31 @@ import {Provider} from 'react-redux'
 import store from '../store/index.js'
 import Gift from '../views/gift'
 import Inputfind from '../views/input'
-import Logo from '../views/logo'
+import Trademark from '../views/trademark'
 
 const router = (
 	<Provider store={store}>
 		<Router>
 				<App>
 					<Switch>
-					<Route path="/index" component={Index}></Route>
-					<Route path="/crossborder" component={Crossborder}></Route>
-					<Route path="/women" component={Women}></Route>
-					<Route path="/men" component={Men}></Route>
-					<Route path="/cosmetics" component={Cosmetics}></Route>
-					<Route path="/lifestyle" component={Lifestyle}></Route>
-					<Route path="/kids" component={Kids}></Route>
-					<Route path="/upcoming" component={Upcoming}></Route>
-					<Route path="/gift" component={Gift}></Route>
-					
-					<Route path="/logo" componenet={Logo}></Route>
-					<Route path="/input" component={Inputfind}></Route>
+						<Route path="/index" component={Index}></Route>
+						<Route path="/crossborder" component={Crossborder}></Route>
+						<Route path="/women" component={Women}></Route>
+						<Route path="/men" component={Men}></Route>
+						<Route path="/cosmetics" component={Cosmetics}></Route>
+						<Route path="/lifestyle" component={Lifestyle}></Route>
+						<Route path="/kids" component={Kids}></Route>
+						<Route path="/upcoming" component={Upcoming}></Route>
+						<Route path="/gift" component={Gift}></Route>
+						<Route path="/trademark" component={Trademark}></Route>
 
-					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
-					<Route path="/brand/:id" component={Brand}></Route>
-					<Route path="/productlist/:id" component={Productlist}></Route>
+						<Route path="/input" component={Inputfind}></Route>
 
-					<Redirect from="*" to="/index"/>
+						<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+						<Route path="/brand/:id" component={Brand}></Route>
+						<Route path="/productlist/:id" component={Productlist}></Route>
+
+						<Redirect from="*" to="/index"/>
 					</Switch>
 				</App>
 
