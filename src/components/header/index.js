@@ -30,7 +30,7 @@ class Header extends Component{
     })
   }
 	render(){
-		return <div className="allheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>
+		return <div className="allheader" style={this.props.isWhite?{background:'white',color:'black'}:null} id="header">
 				{this.state.isShow?
 					<div><ul className="head">
 					<li className="first"><span>登录</span></li>
