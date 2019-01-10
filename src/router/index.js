@@ -21,7 +21,7 @@ import {Provider} from 'react-redux'
 import store from '../store/index.js'
 import Gift from '../views/gift'
 import Inputfind from '../views/input'
-import Logo from '../viwes/logo'
+import Logo from '../views/logo'
 
 const router = (
 	<Provider store={store}>
