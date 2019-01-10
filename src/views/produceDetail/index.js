@@ -6,6 +6,12 @@ import store from '../../store'
 import Swipe from './swipe'
 import Des from './Des'
 import {connect} from 'react-redux'
+import Parameter from './parameter'
+import ProductPic from './productpic'
+import StopWord from './stopWord'
+import Brand from './brand'
+import Comment from './comment'
+import Recommend from './recommend'
 
 class Produce extends Component{
 
@@ -14,7 +20,8 @@ class Produce extends Component{
 	
 	    this.state = {
 	    	productData:null,
-	    	productPrice:null
+	    	productPrice:null,
+	    	recommend:null
 	  };
 	}
 
@@ -25,7 +32,7 @@ class Produce extends Component{
 					<div>
 					<Head>
 						<span className="productName">{this.state.productData.infos.brand}</span>
-						<span className="productPrice">{this.state.productPrice.retDto.price}</span>
+						<span className="productPrice">￥{this.state.productPrice.retDto.price}</span>
 				</Head>
 				<div className="cont">
 					<div className="swipe">
@@ -34,6 +41,12 @@ class Produce extends Component{
 					<div className="des">
 						<Des data={this.state.productData.infos}></Des>
 					</div>
+					<Parameter data={this.state.productData.infos.description.attributesList}/>
+					<ProductPic data={this.state.productData.infos.description}/>
+					<Brand data={this.state.productData.infos}/>
+					<StopWord data={this.state.productData.infos.postSellUrls}/>
+					<Comment />
+					<Recommend data={this.state.recommend.categoryList}/>
 				</div>
 				</div>
 				:null
@@ -69,9 +82,18 @@ class Produce extends Component{
 				axios({
 					url:`http://www.mei.com/appapi/product/detail/v3?categoryId=${res.data.eventId}&productId=${res.data.productId}&platform_code=H5&timestamp=${time()}&summary=ec7fd7ec49470eae3632aa3b865a4eee`
 				}).then(res=>{
-					console.log(res.data)
+					// console.log(res.data)
 					this.setState({
 						productData:res.data
+					})
+				})
+
+				axios({
+					url:`http://www.mei.com/appapi/product/hot/v3?categoryId=${res.data.eventId}&productId=${res.data.productId}&platform_code=H5`
+				}).then(res=>{
+					console.log(res.data)
+					this.setState({
+						recommend:res.data
 					})
 				})
 			})

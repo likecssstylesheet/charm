@@ -16,9 +16,9 @@ class Des extends Component{
 			<div className="discounts lis">
 				<div className="title">领劵</div> <span>满999减150</span>
 			</div>
-			<div className="promotion lis">
+			{this.props.data.promotions.eventList.length>0?<div className="promotion lis">
 				<div className="title">促销</div> <span>{this.props.data.promotions.eventList[0].info}</span>
-			</div>
+			</div>:null}
 			<div className="serve lis">
 				<div className="title">服务</div>
 				<div className="listPendulum">
