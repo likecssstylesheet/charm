@@ -48,11 +48,15 @@
 		padding:10px;
 		li {
 			position: relative;
+			margin-bottom: 5px;
 			padding-bottom:5px;
 			img {
 				width: 100%;
+				display:block;
 			}
 		div {
+			background-image:linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+			width:95%;
 			color: #fff;
 			font-size: 14px;
 			position: absolute;

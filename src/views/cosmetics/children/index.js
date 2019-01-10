@@ -1,47 +1,93 @@
 import React,{Component} from 'react'
-import {getdatalist} from '../model.js'
 
-class Main extends Component{
-	constructor(props) {
-	  super(props);
-	
-	  this.state = {
-	  	datalist:[]
-	  };
-	}
-	render(){
-		return <div>
-				{
-					this.state.datalist.length==0?
-						null
-						:
-						<div className="nav">
-						{this.state.datalist.map(item=>
-							<div key={item.eventId} className="content">
-								<div className="description">
-									<p>{item.englishName}</p>
-									<p>{item.chineseName}</p>
-									<p>{item.discountText}</p>
-								</div>
-								<img src={item.imageUrl} alt=""/>
-							</div>)}
-						</div>
-					}
-		</div>
-	}
 
-	componentDidMount(){
 
-	getdatalist().then(res=>{
-			this.setState({
-				datalist:res
-			})
-		})
-	}
+import axios from 'axios'
 
+import { PullToRefresh, Button } from 'antd-mobile';
+import ReactDOM from 'react-dom'
+
+class Main extends React.Component {
+  constructor(props) {
+  	
+    super(props);
+    this.index=1;
+    this.state = {
+      refreshing: false,
+      down: false,
+      height: document.documentElement.clientHeight,
+      data: [],
+    };
+  }
+
+  componentDidMount() {
+    const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
+    axios.get('http://www.mei.com/appapi/silo/eventForH5?categoryId=cosmetics&pageIndex=1&timestamp=1547019121628&summary=d9cec4d1a1d4499a8c39fe0725ebe059&platform_code=H5').then(res=>{
+    	this.setState({
+    		 height: hei,
+     		 data: res.data.eventList
+    	})
+    })
+    
+  }
+
+  render() {
+    return (<div>
+      
+      <PullToRefresh
+        damping={60}
+        ref={el => this.ptr = el}
+        style={{
+          height: this.state.height,
+          overflow: 'auto',
+        }}
+        indicator={this.state.down ? {} : { deactivate: '上拉可以刷新' }}
+        direction={this.state.down ? 'down' : 'up'}
+        refreshing={this.state.refreshing}
+        onRefresh={() => {
+        	this.index++
+          this.setState({ refreshing: true });
+          axios.get(`http://www.mei.com/appapi/silo/eventForH5?categoryId=cosmetics&pageIndex=${this.index}&timestamp=1547019121628&summary=d9cec4d1a1d4499a8c39fe0725ebe059&platform_code=H5`)
+          .then(res=>{
+          	this.setState({
+          		 refreshing: false,
+          		 data:[...this.state.data,...res.data.eventList]
+          	})
+          })
+        }}
+      >
+      <div className="nav">
+        {this.state.data.map(i => (
+          <div key={i.eventId} className="content">
+            	<div className="description">
+            		<p>{i.englishName}</p>
+            		<p>{i.chineseName}</p>
+            		<p>{i.discountText}</p>
+            	</div>
+            	<img src={i.imageUrl} alt=""/>
+
+          </div>
+        ))}
+        </div>
+      </PullToRefresh>
+    </div>);
+  }
 }
+
+
+
+	
+
 export default Main
 	
+
+
+
+
+
+
+
+
 
 
 
