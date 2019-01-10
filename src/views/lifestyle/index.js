@@ -30,12 +30,20 @@ class Lifestyle extends React.Component {
          
         >
           {this.state.data1.map(val => (
-              <img  key={val.id}
+              <div className="img_a" onClick={this.handleClick.bind(this,val.id)} key={val.id}>
+
+              <img  
                 src={val.main_image}
                 alt="失败"
                 style={{ width: '100%', verticalAlign: 'top' }}
                 
               />
+                <div className="content_life">
+                    <p className="first">{val.main_title}</p>
+                    <p>{val.sub_title}</p>
+                    <p>{val.description}</p>
+                  </div>
+              </div>
            
           ))}
         </Carousel>
@@ -54,6 +62,9 @@ class Lifestyle extends React.Component {
       <Footer/>
       </div>
     )
+  }
+  handleClick(data){
+    this.props.history.push(`/brand/${data}`)
   }
 }
 
