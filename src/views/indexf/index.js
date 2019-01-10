@@ -62,7 +62,7 @@ class Index extends Component{
 			<ul>
 			{
 				this.state.contentDay.map((item,index)=>{
-					return <li key={item.eventId}>
+					return <li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
 						<img src={item.imageUrl} alt="图片出不来了"/>
 						<div>
 							<span>{item.englishName}</span>
@@ -77,7 +77,7 @@ class Index extends Component{
 			<ul>
 			{
 				this.state.contentHot.map((item,index)=>{
-					return <li key={item.eventId}>
+					return <li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
 						<img src={item.imageUrl} alt="图片出不来了"/>
 						<div>
 							<span>{item.englishName}</span>
@@ -105,6 +105,9 @@ class Index extends Component{
 	}
 	handleTrademark(){
 		this.props.history.push(`/trademark`)
+	}
+	handleDetail(id){
+		this.props.history.push(`/productmini/${id}`)
 	}
 }
                                                                                                                                       

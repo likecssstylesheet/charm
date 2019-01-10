@@ -63,7 +63,7 @@ class Crossborder extends React.Component {
 		<ul>
         {
         	this.state.data.map(item =>
-          	<li key={item.eventId}>
+          	<li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
           		<img src={item.imageUrl} alt="图片出不来了"/>
           		<div>
           			<span>{item.siloCategory}直发</span>
@@ -79,6 +79,9 @@ class Crossborder extends React.Component {
         <Footer></Footer>
      </PullToRefresh>
     </div>);
+  }
+  handleDetail(id){
+    this.props.history.push(`/productmini/${id}`)
   }
 }
 
