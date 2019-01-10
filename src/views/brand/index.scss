@@ -1,0 +1,27 @@
+#brand {
+	div.brandImg {
+		position: relative;
+		img {
+			width: 100%;
+			display: block;
+		}
+		h1 {
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 15px;
+			text-align: center;
+			color: #fff;
+			font-size: 22px;
+
+		}
+		span {
+			color: #fff;
+			display: block;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 10px;
+		}
+	}
+}
