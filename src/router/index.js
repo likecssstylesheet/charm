@@ -23,6 +23,7 @@ import Gift from '../views/gift'
 import Inputfind from '../views/input'
 import Logo from '../views/logo'
 
+
 const router = (
 	<Provider store={store}>
 		<Router>

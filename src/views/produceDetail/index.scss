@@ -107,6 +107,9 @@
 				color:#999;
 				display: inline-block;
 			}
+			span{
+				line-height:20px;
+			}
 		}
 		div.show{
 			border-bottom:1px solid #ddd;
@@ -189,12 +192,16 @@
 		}
 		div.recommend{
 			overflow: hidden;
+			padding-bottom:80px;
 			h3{
 				margin:0;
 				padding:20px 0;
 				font-weight: 800;
 			}
 			div{
+				a{
+					color:#000;
+				}
 				width:50%;
 				float: left;
 				box-sizing: border-box;
@@ -235,6 +242,38 @@
 			div:nth-of-type(even){
 				padding-left:2%;
 			}
+		}
+	}
+	#nav{
+		position:fixed;
+		bottom:0;
+		height:50px;
+		width:100%;
+		line-height:50px;
+		text-align: center;
+		display: flex;
+		background:#fff;
+		border-top:1px solid #ccc;
+		margin-left:-6%;
+		div.left{
+			width:75px;
+			display: inline-block;
+			font-size:12px;	
+		}
+		div.right{
+		    width:100%;
+		    display:flex;
+		    border-left:1px solid #ccc;
+		    span{
+		    	display: block;
+		    	flex:1;
+		    	font-weight: 800;
+		    	font-size:17px;
+		    }
+		    span.buy{
+		    	color:#dd2828;
+		    	border-left:1px solid 	#ccc;
+		    }
 		}
 	}
 }

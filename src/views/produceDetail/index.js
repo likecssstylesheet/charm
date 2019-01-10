@@ -12,7 +12,7 @@ import StopWord from './stopWord'
 import Brand from './brand'
 import Comment from './comment'
 import Recommend from './recommend'
-import Nav from './'
+import Nav from './nav'
 
 class Produce extends Component{
 
@@ -22,7 +22,8 @@ class Produce extends Component{
 	    this.state = {
 	    	productData:null,
 	    	productPrice:null,
-	    	recommend:null
+	    	recommend:null,
+	    	productId:null
 	  };
 	}
 
@@ -47,7 +48,8 @@ class Produce extends Component{
 					<Brand data={this.state.productData.infos}/>
 					<StopWord data={this.state.productData.infos.postSellUrls}/>
 					<Comment />
-					<Recommend data={this.state.recommend.categoryList}/>
+					<Recommend data={this.state.recommend.categoryList} />
+					<Nav />
 				</div>
 				</div>
 				:null
@@ -55,6 +57,14 @@ class Produce extends Component{
 			</div>
 			)
 	}
+
+	// restart(id){
+	// 	console.log()
+	// 	this.setState({
+	// 		productId:id
+	// 	})
+	// }
+	
 
 	componentWillMount(){
 		
@@ -71,6 +81,9 @@ class Produce extends Component{
 					
 			}).then((res)=>{
 				// console.log(res.data)
+				this.setState({
+					productId:res.data.productId
+				})
 				axios({
 					url:`http://www.mei.com/appapi/product/getProductPrice/v3?productId=${res.data.productId}&userLevel=2&type=0`
 				}).then(res=>{

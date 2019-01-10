@@ -4,12 +4,12 @@ class Nav extends Component{
 
 	render(){
 		return <div id="nav">
-			<div class="left">
+			<div className="left">
 				<p>购物袋</p>
 			</div>
-			<div>
-				<span class="car">加入购物车</span>
-				<span>立即购买</span>
+			<div className="right">
+				<span className="car">加入购物车</span>
+				<span className="buy">立即购买</span>
 			</div>
 		</div>
 	}
