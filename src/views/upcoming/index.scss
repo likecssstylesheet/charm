@@ -1,0 +1,58 @@
+#comeon{
+	background:#fff;
+	padding:0 5%;
+	padding-top:90px;
+	div.info{
+		padding-bottom:10px;
+		h2{
+		font-weight: 400;
+		font-size:18px;
+        span{
+        	color:#dd2828;
+			padding:0 5px;
+        	}
+		}
+		span{
+        	color:#666;
+        	font-size:12px;	
+        }
+	}
+	div.kind{
+		div.listpendulum{
+			position:relative;
+			margin-bottom:20px;
+		}
+		img{
+			width:100%;
+			height:207px;
+		}
+		div.des{
+			position:absolute;
+			bottom:0;
+			width:100%;
+			height:100px;
+			background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+			span{
+				padding-left:10px;
+				color:#fff;
+			}
+			span.brand{
+				display: block;
+				margin-top:40px;
+				font-size:16px;
+				font-weight: 500;
+			}
+			span.event{
+				display: block;
+			}
+			span.redmint{
+				float:right;
+				color:#000;
+				background:#fff;
+				padding:2px 5px;
+				font-size:12px;
+				margin-right:10px;
+			}
+		}
+	}
+}

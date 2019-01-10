@@ -40,7 +40,7 @@ const router = (
 					<Route path="/trademark" component={Trademark}></Route>
 					<Route path="/input" component={Inputfind}></Route>
 
-					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
+					<Route path="/productdetail/:data" component={produceDetail}></Route>
 					<Route path="/brand/:id" component={Brand}></Route>
 					<Route path="/productlist/:id" component={Productlist}></Route>
 					<Route path="/productmini/:id" component={ProductMini}></Route>
