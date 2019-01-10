@@ -1,3 +1,4 @@
+#life{
 .life_swipe{
 	width:100%;
 	margin-left:-18px;
@@ -7,4 +8,36 @@ div.sort{
 	img{
 		width:100%;
 	}
+}
+
+div.nav{
+	
+
+	div{
+		width:100%;
+		
+		img{
+			margin-left:4%;
+			width:92%;
+		}
+	}
+}
+div.content{
+	width:100%;
+	position:relative;
+	margin-bottom:10px;
+	.description{
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+		width:92%;
+		padding-bottom:14px;
+		box-sizing:border-box;
+		padding-left:10px;
+		position:absolute;
+		bottom:0px;
+		left:4%;
+		p{	margin:4px 0;
+			color:white;
+		}
+	}
+}
 }

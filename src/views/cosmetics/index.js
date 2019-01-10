@@ -10,8 +10,8 @@ class Cosmetics extends Component{
 	
 	  this.state = {
 	  	datalist:[],
-	  	banner:null
-	  	
+	  	banner:null,
+	  	list:[]
 	  };
 	}
 	componentDidMount(){
@@ -31,7 +31,7 @@ class Cosmetics extends Component{
 	}
 
 	render(){
-		return <div>
+		return <div id="cos">
 
 				{	this.state.banner?
 					<div className="cosmetic_banner">
