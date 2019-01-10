@@ -12,6 +12,7 @@ import StopWord from './stopWord'
 import Brand from './brand'
 import Comment from './comment'
 import Recommend from './recommend'
+import Nav from './'
 
 class Produce extends Component{
 
