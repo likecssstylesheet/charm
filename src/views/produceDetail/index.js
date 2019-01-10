@@ -48,7 +48,7 @@ class Produce extends Component{
 					<Brand data={this.state.productData.infos}/>
 					<StopWord data={this.state.productData.infos.postSellUrls}/>
 					<Comment />
-					<Recommend data={this.state.recommend.categoryList} />
+					<Recommend data={this.state.recommend.categoryList} restart={getData.bind(this)} {...this.props}/>
 					<Nav />
 				</div>
 				</div>
@@ -57,13 +57,15 @@ class Produce extends Component{
 			</div>
 			)
 	}
+	restart(id){
+		this.setState({
+			productId:id
+		})
+	}
 
-	// restart(id){
-	// 	console.log()
-	// 	this.setState({
-	// 		productId:id
-	// 	})
-	// }
+    componentWillReceiveProps(){
+
+    }
 	
 
 	componentWillMount(){
@@ -76,7 +78,17 @@ class Produce extends Component{
 		this.props.show();
 	}
 	componentDidMount(){
-		axios({
+		getData.bind(this)()
+	}
+}
+function getData(){
+	this.setState({
+		productData:null,
+		productPrice:null,
+		recommend:null,
+		productId:null
+	})
+	axios({
 			url:`http://www.mei.com/appapi/product/getAppProductDetailUrl/v3?${this.props.match.params.data}`
 					
 			}).then((res)=>{
@@ -105,20 +117,18 @@ class Produce extends Component{
 				axios({
 					url:`http://www.mei.com/appapi/product/hot/v3?categoryId=${res.data.eventId}&productId=${res.data.productId}&platform_code=H5`
 				}).then(res=>{
-					console.log(res.data)
+					// console.log(res.data)
 					this.setState({
 						recommend:res.data
 					})
 				})
 			})
-	}
-}
-
-
-function time(){
-	var date = new Date();
-	return date.getTime();
-}
+		}
+		
+		function time(){
+			var date = new Date();
+			return date.getTime();
+		}
 
 export default connect(
   null,
