@@ -41,28 +41,28 @@ class Header extends Component{
 
 				<ul className="tabbar"  >
 					<li >
-						<NavLink to="/index" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>推荐</NavLink>
+						<NavLink to="/index" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>推荐</NavLink>
 					</li>
 					<li>
-						<NavLink to="/crossborder" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>海外</NavLink>
+						<NavLink to="/crossborder" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>海外</NavLink>
 					</li>
 					<li>
-						<NavLink to="/women" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>女士</NavLink>
+						<NavLink to="/women" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>女士</NavLink>
 					</li>
 					<li>
-						<NavLink to="/men" replace activeClassName="active" style={this.props.isWhite?{background:'white',color:'black'}:null}>男生</NavLink>
+						<NavLink to="/men" replace activeClassName="activeheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>男生</NavLink>
 					</li>
 					<li>
-						<NavLink to="/cosmetics" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>美妆</NavLink>
+						<NavLink to="/cosmetics" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>美妆</NavLink>
 					</li>
 					<li>
-						<NavLink to="lifestyle" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>家居</NavLink>
+						<NavLink to="lifestyle" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>家居</NavLink>
 					</li>
 					<li>
-						<NavLink to="/kids" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>婴童</NavLink>
+						<NavLink to="/kids" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>婴童</NavLink>
 					</li>
 					<li>
-						<NavLink to="/upcoming" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>即将上线</NavLink>
+						<NavLink to="/upcoming" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>即将上线</NavLink>
 					</li>
 				</ul>
 		</div></div>:null}

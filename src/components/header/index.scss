@@ -1,9 +1,10 @@
-.active{
+
+	.activeheader{
 	position:relative;
 	font-weight:100;
 	cursor: none;
 }
-.active:after{
+.activeheader:after{
 	left: 50%;
   	transform:translate(-50%);
 	content:"";
