@@ -56,7 +56,7 @@ class Cosmetics extends Component{
 				:null
 				}
 
-			<Main></Main>
+			<Main {...this.props}></Main>
 			<Footer></Footer>	
 
 		</div>

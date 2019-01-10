@@ -12,7 +12,7 @@ class Input extends Component{
 	  };
 	}
 	render(){
-		return <div className="all">
+		return <div id="all">
 				<div className="header">
 					
 						<div className="up">
