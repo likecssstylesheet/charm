@@ -31,7 +31,7 @@ class Cosmetics extends Component{
 	}
 
 	render(){
-		return <div>
+		return <div id="cos">
 
 				{	this.state.banner?
 					<div className="cosmetic_banner">
@@ -46,13 +46,14 @@ class Cosmetics extends Component{
 			}
 
 			{
-				this.state.list.length==0?
-				null
-				:<div className="classify">
+				this.state.banner?
+				
+				<div className="classify">
 					<ul>
 						{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr} alt=""/></li>)}
 					</ul>
 				</div>
+				:null
 				}
 
 			<Main></Main>

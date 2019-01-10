@@ -1,5 +1,8 @@
 import React,{Component} from 'react'
-import {getBrandInfo} from './model.js'
+
+import {getBrandInfo }from './model.js'
+
+
 class Brand extends Component {
 	constructor(props) {
 		super(props)

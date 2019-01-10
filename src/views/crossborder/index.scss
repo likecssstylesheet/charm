@@ -1,6 +1,33 @@
 #crossborder{
-	overflow:auto;
+	overflow: hidden;
 	img{
 		width: 100%;
+	}
+	ul{
+		padding: 10px 3% 0;
+		li{
+			margin-bottom: 5px;
+			position:relative;
+			div{
+				padding-left: 3%;
+				padding-bottom:10px;
+				color: #fff;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width:100%;
+				box-sizing: border-box;
+				background-image:linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+				span{
+					background:#fff;
+					color: #000;
+					margin-bottom: 5px;
+					display: inline-block;
+				}
+				p{
+					margin-bottom: 5px;
+				}
+			}
+		}
 	}
 }
