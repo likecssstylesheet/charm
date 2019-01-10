@@ -22,7 +22,7 @@ import store from '../store/index.js'
 import Gift from '../views/gift'
 import Inputfind from '../views/input'
 import Trademark from '../views/trademark'
-
+import ProductMini from '../views/productmini'
 const router = (
 	<Provider store={store}>
 		<Router>
@@ -43,6 +43,7 @@ const router = (
 					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
 					<Route path="/brand/:id" component={Brand}></Route>
 					<Route path="/productlist/:id" component={Productlist}></Route>
+					<Route path="/productmini/:id" component={ProductMini}></Route>
 
 					<Redirect from="*" to="/index"/>
 					</Switch>
