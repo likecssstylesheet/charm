@@ -21,7 +21,7 @@ class Des extends Component{
 			</div>
 			<div className="serve lis">
 				<div className="title">服务</div>
-				<div className="list">
+				<div className="listPendulum">
 					{this.props.data.service_labels.map((item)=>
 						<span key={item.label_title}>{item.label_title}</span>
 						)}

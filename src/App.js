@@ -17,18 +17,12 @@ class App extends Component {
   render() {
     return (
       <div >
-            {this.state.isShow?<Header chuandi={this.props}></Header>:null}
-            {this.props.children}
+          <Header chuandi={this.props}></Header>
+          {this.props.children}
       </div>
     )
   }
-  componentWillMount(){
-    store.subscribe(()=>{
-      this.setState({
-        isShow:store.getState().headerReducer
-      })
-    })
-  }
+  
   componentDidMount(){  
   	window.onscroll=this.scroll.bind(this);	
   }

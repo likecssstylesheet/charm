@@ -14,6 +14,7 @@ class Head extends Component{
 			<div className="menu">
 			    <span className="iconfont icon-caidan"></span>
 			</div>
+			
 		</div>
 
 	}
