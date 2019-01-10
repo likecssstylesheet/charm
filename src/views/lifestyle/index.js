@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
 import axios from 'axios'
 import './index.scss'
-
+import Main from './children'
 class Lifestyle extends React.Component {
   state = {
     data: [],
@@ -19,31 +19,34 @@ class Lifestyle extends React.Component {
   }
   render() {
     return (
+    <div>
     <div className="life_swipe">
       <WingBlank style={{width:'100%'}} >
         <Carousel key={this.state.data.length}
           autoplay={true}
           infinite
-          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-          afterChange={index => console.log('slide to', index)}
+         
         >
           {this.state.data.map(val => (
               <img  key={val.id}
                 src={val.main_image}
-                alt=""
+                alt="失败"
                 style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
+                
               />
            
           ))}
         </Carousel>
       </WingBlank>
+     
+      </div> 
+      <div className="sort">
+     		 <img alt="" src="https://cdn13.mei.com/category/20180621/a789fab3fbc384262a0a542c5ae8ca0ae15d3cf3671d4998.jpg"/>
+     </div>
+      <Main/>
+
       </div>
-    );
+    )
   }
 }
 

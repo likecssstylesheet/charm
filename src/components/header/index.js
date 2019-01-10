@@ -3,13 +3,15 @@ import {NavLink} from 'react-router-dom'
 import './index.scss'
 import {connect} from 'react-redux'
 import axios from 'axios'
+import store from '../../store'
 
 class Header extends Component{
 	constructor(props) {
 	  super(props);
 	
 	  this.state = {
-	  	content:''
+	  	content:'',
+	  	isShow:true
 	  };
 	}
 
@@ -20,9 +22,17 @@ class Header extends Component{
   		})
   	})
 	}
+	componentWillMount(){
+    store.subscribe(()=>{
+      this.setState({
+        isShow:store.getState().headerReducer
+      })
+    })
+  }
 	render(){
 		return <div className="allheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>
-				<ul className="head">
+				{this.state.isShow?
+					<div><ul className="head">
 					<li className="first"><span>登录</span></li>
 					<li className="two"><div onClick={this.handle.bind(this)}><i className="iconfont icon-sousuo"> </i>{this.state.content}</div></li>
 					<li className="last"><i className="iconfont icon-baozhuanhuan"></i></li>
@@ -55,7 +65,7 @@ class Header extends Component{
 						<NavLink to="/upcoming" replace activeClassName="active"  style={this.props.isWhite?{background:'white',color:'black'}:null}>即将上线</NavLink>
 					</li>
 				</ul>
-		</div>
+		</div></div>:null}
 	</div>	
 	}
 	handle(){

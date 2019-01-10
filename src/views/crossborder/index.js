@@ -43,7 +43,7 @@ class Crossborder extends React.Component {
         direction={'up'}
         refreshing={this.state.refreshing}
         onRefresh={() => {
-          this.setState({ refreshing: true });
+          this.setState({ refreshing: true});
           setTimeout(() => {
             this.setState({ refreshing: false,
             	data:[...this.state.data,'xiaoming','xiaomiao']
