@@ -10,16 +10,21 @@ class Preductmini extends Component{
 	  this.state = {
 	  	isshow:false,
 	  	content:null,
-	  	light:1
+	  	light:1,
+	  	datalist:[]
 	  };
+	}
+	componentWillUnmount(){
+		this.props.showheader()
 	}
 	componentDidMount(){
 
 		axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=&sort=&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
 		.then(res=>{
-			console.log(res.data.eventName);
+			console.log(res.data.products);
 			this.setState({
-					content:res.data
+					content:res.data,
+					datalist:res.data.products
 			})
 		})
 	}
@@ -53,6 +58,22 @@ class Preductmini extends Component{
 					<div className="smalltitle">
 						<img src="/images/mianyun.png"/><span>{this.state.content.promotions.info.slice(0,-1)}</span>
 					</div>
+					<ul>
+						{	this.state.datalist==0?
+							null
+
+							:this.state.datalist.map(item=>
+								<li key={item.glsCode}>
+									<img src={item.imageUrl}/>
+									
+									<p>{item.brandName}</p>
+									<p>{item.productName}</p>
+									<p><span>{item.price}</span><span>{item.marketPrice}</span></p>
+								</li>
+							)
+						}
+
+					</ul>
 				</div>
 
 			:null}
@@ -62,7 +83,7 @@ class Preductmini extends Component{
 		this.props.hideheader()
 	}
 	goback(){
-		this.props.showheader()
+		
 		this.props.history.go(-1)
 	}
 	person(){
