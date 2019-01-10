@@ -37,7 +37,7 @@ const router = (
 					<Route path="/kids" component={Kids}></Route>
 					<Route path="/upcoming" component={Upcoming}></Route>
 					<Route path="/gift" component={Gift}></Route>
-					<Route path="/trademark" componenet={Trademark}></Route>
+					<Route path="/trademark" component={Trademark}></Route>
 					<Route path="/input" component={Inputfind}></Route>
 
 					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
