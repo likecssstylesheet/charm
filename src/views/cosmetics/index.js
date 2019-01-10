@@ -10,8 +10,8 @@ class Cosmetics extends Component{
 	
 	  this.state = {
 	  	datalist:[],
-	  	banner:null,
-	  	list:[]
+	  	banner:null
+	  	
 	  };
 	}
 	componentDidMount(){
@@ -46,13 +46,14 @@ class Cosmetics extends Component{
 			}
 
 			{
-				this.state.list.length==0?
-				null
-				:<div className="classify">
+				this.state.banner?
+				
+				<div className="classify">
 					<ul>
 						{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr} alt=""/></li>)}
 					</ul>
 				</div>
+				:null
 				}
 
 			<Main></Main>

@@ -3,6 +3,7 @@ import { Carousel, WingBlank } from 'antd-mobile';
 import axios from 'axios'
 import './index.scss'
 import Main from './children'
+import Footer from '../../components/footer'
 class Lifestyle extends React.Component {
   state = {
     data: [],
@@ -40,11 +41,15 @@ class Lifestyle extends React.Component {
       </WingBlank>
      
       </div> 
-      <div className="sort">
+     { this.state.data?
+     	null
+     	:<div className="sort">
      		 <img alt="" src="https://cdn13.mei.com/category/20180621/a789fab3fbc384262a0a542c5ae8ca0ae15d3cf3671d4998.jpg"/>
      </div>
-      <Main/>
+ 	}
 
+      <Main/>
+      <Footer/>
       </div>
     )
   }

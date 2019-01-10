@@ -44,7 +44,8 @@
 }
 
 div.nav{
-	overflow:hidden;
+	
+
 	div{
 		width:100%;
 		
@@ -57,11 +58,16 @@ div.nav{
 div.content{
 	width:100%;
 	position:relative;
+	margin-bottom:10px;
 	.description{
-		margin-left:6%;
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+		width:92%;
+		padding-bottom:14px;
+		box-sizing:border-box;
+		padding-left:10px;
 		position:absolute;
-		bottom:10px;
-		left:6px;
+		bottom:0px;
+		left:4%;
 		p{	margin:4px 0;
 			color:white;
 		}
