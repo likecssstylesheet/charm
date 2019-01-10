@@ -21,7 +21,7 @@ import {Provider} from 'react-redux'
 import store from '../store/index.js'
 import Gift from '../views/gift'
 import Inputfind from '../views/input'
-import Logo from '../views/logo'
+import Trademark from '../views/trademark'
 
 const router = (
 	<Provider store={store}>
@@ -37,8 +37,7 @@ const router = (
 					<Route path="/kids" component={Kids}></Route>
 					<Route path="/upcoming" component={Upcoming}></Route>
 					<Route path="/gift" component={Gift}></Route>
-					
-					<Route path="/logo" componenet={Logo}></Route>
+					<Route path="/trademark" componenet={Trademark}></Route>
 					<Route path="/input" component={Inputfind}></Route>
 
 					<Route path="/productdetail/:data" component={produceDetail} exact></Route>
