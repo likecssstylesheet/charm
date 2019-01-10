@@ -1,0 +1,71 @@
+#trademark{
+	header{
+		width:100%;
+		background:#fff;
+		position:relative;
+		height: 45px;
+			a{
+			width: 20%;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+				span{
+					font-size: 20px;
+					color:#000;
+				}
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				position: relative;
+				float: right;
+				.iconfont{
+					font-size: 30px;
+				}
+				.three{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom:0;
+					width: 0;
+					height:0;
+					border-right:10px solid rgba(255,255,255,0);
+					border-bottom: 10px solid hsla(0,0%,96%,.96);
+					border-left: 10px solid rgba(255,255,255,0)
+				}
+			}
+		.center{
+			width: 60%;
+			line-height:45px;
+			height: 45px;
+			font-size: 16px;
+			color: #000;
+			text-align:center;
+			font-weight: 700;
+			float:left;
+		}
+		ul{
+			position: absolute;
+			right: 0;
+			top:45px;
+			width:25%;
+			height:150px;
+			background:hsla(0,0%,96%,.96);
+			li{
+				height: 50px;
+				a{
+					display:inline-block;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					width: 100%;
+					box-sizing: border-box;
+					margin:0 5%;
+					padding:15px 0;
+				}
+			}
+		}
+	}
+
+}
