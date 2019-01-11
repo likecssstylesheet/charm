@@ -78,7 +78,7 @@ class Preductmini extends Component{
 								null
 
 								:this.state.datalist.map(item=>
-									<li key={item.glsCode} onClick={this.jump.bind(this,item.glsCode,this.state.id)}>
+									<li key={Math.random()} onClick={this.jump.bind(this,item.glsCode,this.state.id)}>
 										<img src={item.imageUrl}/>
 										{
 											item.tagListDto.length==0?

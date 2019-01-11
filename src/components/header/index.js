@@ -65,9 +65,11 @@ class Header extends Component{
 						<NavLink to="/upcoming" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>即将上线</NavLink>
 					</li>
 				</ul>
-		</div></div>:null}
+			</div>
+	</div>:null}
+		
 	</div>	
-	}
+}
 	handle(){
 		this.props.chuandi.history.push('/input')
 	}

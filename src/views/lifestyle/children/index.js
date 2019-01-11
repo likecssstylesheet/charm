@@ -31,7 +31,7 @@ class Main extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<div id="push">
       
       <PullToRefresh
         damping={60}
