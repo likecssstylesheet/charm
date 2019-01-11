@@ -48,7 +48,7 @@ class Produce extends Component{
 					<Brand data={this.state.productData.infos}/>
 					<StopWord data={this.state.productData.infos.postSellUrls}/>
 					<Comment />
-					<Recommend data={this.state.recommend.categoryList} restart={getData.bind(this)} {...this.props}/>
+					{this.state.recommend.categoryList.length>0?<Recommend data={this.state.recommend.categoryList} restart={getData.bind(this)} {...this.props}/>:null}
 					<Nav />
 				</div>
 				</div>

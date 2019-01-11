@@ -3,5 +3,8 @@
   padding: 0;
 }
 ul {
-  list-style: none
+  list-style: none;
+}
+html{
+   touch-action:none;
 }
