@@ -7,4 +7,13 @@ function getBrandInfo(num) {
 	})
 }
 
-export {getBrandInfo}
+function getGoodthing(num) {
+	return axios({
+		url: `http://www.mei.com/appapi/brand/product/secCategoryProduct/v3?logoId=${num}&pageIndex=1&categoryId=1000000342`
+		
+	}).then(res => {
+		return res.data.body
+	})
+}
+
+export {getBrandInfo,getGoodthing}

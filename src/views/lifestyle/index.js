@@ -12,7 +12,7 @@ class Lifestyle extends Component {
   }
   componentDidMount() {
     // simulate img loading
- Toast.loading('Loading...', 3, () => {
+ Toast.loading('玩命加载中...', 3, () => {
      console.log('Load complete !!!');
    });
 
