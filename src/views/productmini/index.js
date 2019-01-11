@@ -11,7 +11,8 @@ class Preductmini extends Component{
 	  	isshow:false,
 	  	content:null,
 	  	light:1,
-	  	datalist:[]
+	  	datalist:[],
+	  	up:true
 	  };
 	}
 	componentWillUnmount(){
@@ -51,7 +52,7 @@ class Preductmini extends Component{
 					<div className="classify">
 						<div onClick={this.person.bind(this)} className={this.state.light==1? 'light':null}>人气</div>
 						<div onClick={this.discount.bind(this)} className={this.state.light==2? 'light':null}>折扣</div>
-						<div onClick={this.prize.bind(this)} className={this.state.light==3? 'light':null}>价格</div>
+						<div onClick={this.prize.bind(this)} className={this.state.light==3? 'light':null} id={this.state.up?'propirze':'propirze11'}>价格</div>
 						<div onClick={this.filter.bind(this)}>筛选</div>
 						
 					</div>
@@ -80,8 +81,8 @@ class Preductmini extends Component{
 											item.tagListDto.length==0?
 											<p></p>
 											:
-											item.tagListDto.map((value)=><p className="log" style={{color:`#${value.fontColor}`,border:`1px solid #${value.frameColor}`,backgroundColor:`#${value.fontBackgroudColor}`}}>
-											{value.tag}</p>)
+											item.tagListDto.map((value)=><span className="log" style={{color:`#${value.fontColor}`,border:`1px solid #${value.frameColor}`,backgroundColor:`#${value.fontBackgroudColor}`}}>
+											{value.tag}</span>)
 										}
 										<p className="big">{item.brandName}</p>
 										<p>{item.productName}</p>
@@ -105,19 +106,59 @@ class Preductmini extends Component{
 		this.props.history.go(-1)
 	}
 	person(){
-		this.setState({
-			light:1
+		axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=&sort=&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
+		.then(res=>{
+			console.log(res.data.products);
+			this.setState({
+					content:res.data,
+					datalist:res.data.products,
+					light:1
+			})
 		})
+
+		
 	}
 	discount(){
-		this.setState({
-			light:2
+		axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=1&sort=ASC&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
+		.then(res=>{
+			console.log(res.data.products);
+			this.setState({
+					content:res.data,
+					datalist:res.data.products,
+					light:2
+			})
 		})
+		
+		
 	}
 	prize(){
+
+	if(this.state.up){
+	axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=&sort=DESC&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
+	.then(res=>{
+		console.log(res.data.products);
 		this.setState({
-			light:3
+				content:res.data,
+				datalist:res.data.products,
+				light:3,
+				up:!this.state.up
 		})
+	})
+}else{
+	axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=1&sort=DESC&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
+	.then(res=>{
+		console.log(res.data.products);
+		this.setState({
+				content:res.data,
+				datalist:res.data.products,
+				light:3,
+				up:!this.state.up
+		})
+	})
+}
+		
+			
+		
 	}
 	filter(){
 
@@ -132,6 +173,7 @@ export default connect(null,{
 			payload:false
 		}
 	},
+
 	showheader(){
 		return{
 			type:"Showheader",
