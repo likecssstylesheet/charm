@@ -3,6 +3,7 @@ import {getbanner,getdatalist,distype} from './model.js'
 import './index.scss'
 import Footer from '../../components/footer'
 import Main from './children'
+import { Toast} from 'antd-mobile'
 
 class Cosmetics extends Component{
 	constructor(props) {
@@ -14,9 +15,16 @@ class Cosmetics extends Component{
 	  	list:[]
 	  };
 	}
+	componentWillMount(){
+		Toast.loading('玩命加载中...', 3, () => {
+		   console.log('Load complete !!!')
+		 },false);
+	}
 	componentDidMount(){
+		
+
 		getbanner().then(res=>{
-			console.log(res,this.state.banner)
+			Toast.hide();
 			this.setState({
 				banner:res
 			})
@@ -28,12 +36,15 @@ class Cosmetics extends Component{
 				list:res
 			})
 		})
+
+
 	}
 
 	render(){
 		return <div id="cos">
 
 				{	this.state.banner?
+					<div>
 					<div className="cosmetic_banner">
 						<img src={this.state.banner[0].main_image} alt=""/>
 						<div>
@@ -42,19 +53,15 @@ class Cosmetics extends Component{
 							<p>{this.state.banner[0].description}</p>
 						</div>
 					</div>
-					:null
-			}
-
-			{
-				this.state.banner?
 				
 				<div className="classify">
 					<ul>
 						{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr} alt=""/></li>)}
 					</ul>
 				</div>
-				:null
-				}
+				</div>
+				
+				:null}
 
 			<Main {...this.props}></Main>
 			<Footer></Footer>	
