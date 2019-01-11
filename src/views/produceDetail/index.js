@@ -32,7 +32,7 @@ class Produce extends Component{
 			<div id="detail">
 				{this.state.productData&&this.state.productPrice?
 					<div>
-					<Head>
+					<Head {...this.props}>
 						<span className="productName">{this.state.productData.infos.brand}</span>
 						<span className="productPrice">￥{this.state.productPrice.retDto.price}</span>
 				</Head>

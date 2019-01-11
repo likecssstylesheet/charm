@@ -12,7 +12,8 @@ class Preductmini extends Component{
 	  	content:null,
 	  	light:1,
 	  	datalist:[],
-	  	up:true
+	  	up:true,
+	  	id:''
 	  };
 	}
 	componentWillUnmount(){
@@ -25,7 +26,8 @@ class Preductmini extends Component{
 			console.log(res.data.products);
 			this.setState({
 					content:res.data,
-					datalist:res.data.products
+					datalist:res.data.products,
+					id:this.props.match.params.id
 			})
 		})
 	}
@@ -75,7 +77,7 @@ class Preductmini extends Component{
 								null
 
 								:this.state.datalist.map(item=>
-									<li key={item.glsCode}>
+									<li key={item.glsCode} onClick={this.jump.bind(this,item.glsCode,this.state.id)}>
 										<img src={item.imageUrl}/>
 										{
 											item.tagListDto.length==0?
@@ -162,6 +164,9 @@ class Preductmini extends Component{
 	}
 	filter(){
 
+	}
+	jump(data1,data2){
+		this.props.history.push(`/productdetail/eventCode=${data2}&glsCode=${data1}`)
 	}
 
 }

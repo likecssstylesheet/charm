@@ -11,7 +11,7 @@ class Head extends Component{
 	}
 	render(){
 		return <div id="headPendulum">
-			<div className="back">
+			<div className="back" onClick={this.back.bind(this)}>
 				<span className="iconfont icon-xiazai6"></span>	
 			</div>
 			<div className="data">
@@ -34,6 +34,10 @@ class Head extends Component{
 		this.setState({
 			isShow:!this.state.isShow
 		})
+	}
+	back(){
+		this.props.history.go(-1)
+		
 	}
 }
 
