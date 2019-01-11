@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import './index.scss'
 import axios from 'axios'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Master from './children'
 
 class Preductmini extends Component{
 	constructor(props) {
@@ -15,7 +16,8 @@ class Preductmini extends Component{
 	  	datalist:[],
 	  	up:true,
 	  	id:'',
-	  	position:true
+	  	position:true,
+	  	changestate:false
 	  };
 	}
 	componentWillUnmount(){
@@ -38,8 +40,8 @@ class Preductmini extends Component{
 
 	
 	}
-	render(){
-					return <div id="preductMin">
+	render(){return(	
+				<div id="preductMin">
 							
 							{	this.state.content?
 							<div>
@@ -124,8 +126,22 @@ class Preductmini extends Component{
 
 						:null
 						}
+							<ReactCSSTransitionGroup
+							          transitionName="kerwin"
+							          transitionEnterTimeout={700}
+							          transitionLeaveTimeout={500}>
+							{this.state.changestate?
+							
+								<Master ishide={()=>{this.setState({
+									changestate:false
+								})}}></Master>
+								:null
+							
+
+							}
+							</ReactCSSTransitionGroup>
 					</div>
-	}
+	)}
 	componentWillMount(){
 		
 	}
@@ -172,6 +188,7 @@ class Preductmini extends Component{
 
 		
 	}
+
 	prize(){
 
 	if(this.state.up){
@@ -206,7 +223,10 @@ class Preductmini extends Component{
 	}
 
 	filter(){
-
+		console.log(this.state.changestate)
+		this.setState({
+			changestate:true
+		})
 	}
 	jump(data1,data2){
 		this.props.history.push(`/productdetail/eventCode=${data2}&glsCode=${data1}`)
