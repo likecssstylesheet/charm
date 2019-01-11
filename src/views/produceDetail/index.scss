@@ -142,17 +142,20 @@
 				padding:20px 0;
 				overflow: hidden;
 				margin:0;
-				a{
+				a{	display: block;
 					color:#333;
 					overflow: hidden;
 					strong{
 						font-weight: 800;
 						font-size:20px;
+						display: block;
+						float:left;
 					}
 					span{
 						float:right;
 						color:#666;
 						font-size:14px;
+						display: block;
 					}
 				}
 			}
