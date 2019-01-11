@@ -2,24 +2,28 @@ import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import './index.scss'
 import axios from 'axios'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Preductmini extends Component{
 	constructor(props) {
 	  super(props);
-	
+	  this.scroll=this.isposition.bind(this)
 	  this.state = {
 	  	isshow:false,
 	  	content:null,
 	  	light:1,
 	  	datalist:[],
 	  	up:true,
-	  	id:''
+	  	id:'',
+	  	position:true
 	  };
 	}
 	componentWillUnmount(){
 		this.props.showheader()
+		window.removeEventListener('scroll',this.scroll)
 	}
 	componentDidMount(){
+		window.addEventListener('scroll', this.scroll);		
 		this.props.hideheader()
 
 		axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=&sort=&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
@@ -31,34 +35,43 @@ class Preductmini extends Component{
 					id:this.props.match.params.id
 			})
 		})
+
+	
 	}
 	render(){
 		return <div id="preductMin">
 				{ this.state.content?
 				<div>
-					<ul className="header">
-						<li className="ic" onClick={this.goback.bind(this)}><i className="iconfont icon-fanhuijiantou parent"></i></li>
-						<li className="title contents"><span>{this.state.content.eventName}</span></li>
-						<li className="ic " onClick={()=>{this.setState({
-							isshow:!this.state.isshow
-						})}}><i className="iconfont icon-gengduo"></i></li>	
-					</ul>
-					{ this.state.isshow?
-					<ul className="navlist">
-						<li className="sanjiao"></li>
-						<li className="nav"><p>首页</p></li>
-						<li className="nav"><p>购物袋</p></li>
-						<li className="nav"><p style={{border:'none'}}>个人中心</p></li>
-					</ul>
-					:null
-					}
-					<div className="classify">
-						<div onClick={this.person.bind(this)} className={this.state.light==1? 'light':null}>人气</div>
-						<div onClick={this.discount.bind(this)} className={this.state.light==2? 'light':null}>折扣</div>
-						<div onClick={this.prize.bind(this)} className={this.state.light==3? 'light':null} id={this.state.up?'propirze':'propirze11'}>价格</div>
-						<div onClick={this.filter.bind(this)}>筛选</div>
-						
+					<ReactCSSTransitionGroup
+					          transitionName="kerwin"
+					          transitionEnterTimeout={500}
+					          transitionLeaveTimeout={300}>
+					<div className={this.state.position? 'headerNav':'headerNavnone'}>
+						<ul className="header">
+							<li className="ic" onClick={this.goback.bind(this)}><i className="iconfont icon-fanhuijiantou parent"></i></li>
+							<li className="title contents"><span>{this.state.content.eventName}</span></li>
+							<li className="ic " onClick={()=>{this.setState({
+								isshow:!this.state.isshow
+							})}}><i className="iconfont icon-gengduo"></i></li>	
+						</ul>
+						{ this.state.isshow?
+						<ul className="navlist">
+							<li className="sanjiao"></li>
+							<li className="nav"><p>首页</p></li>
+							<li className="nav"><p>购物袋</p></li>
+							<li className="nav"><p style={{border:'none'}}>个人中心</p></li>
+						</ul>
+						:null
+						}
+						<div className="classify">
+							<div onClick={this.person.bind(this)} className={this.state.light==1? 'light':null}>人气</div>
+							<div onClick={this.discount.bind(this)} className={this.state.light==2? 'light':null}>折扣</div>
+							<div onClick={this.prize.bind(this)} className={this.state.light==3? 'light':null} id={this.state.up?'propirze':'propirze11'}>价格</div>
+							<div onClick={this.filter.bind(this)}>筛选</div>
+							
+						</div>
 					</div>
+				</ReactCSSTransitionGroup>	
 					<div className="productsAll">
 						<div className="smalltitle">
 							{
@@ -137,6 +150,19 @@ class Preductmini extends Component{
 			})
 		})
 		
+		
+	}
+	isposition(){
+		if(document.documentElement.scrollTop>240){
+			this.setState({
+				position:false
+			})
+		}else{
+			this.setState({
+				position:true
+			})
+		}
+
 		
 	}
 	prize(){

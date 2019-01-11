@@ -28,6 +28,7 @@ class App extends Component {
   }
   scroll(){
   	
+  	
   		if(document.documentElement.scrollTop>0){
   			this.props.changewhite()
   		}

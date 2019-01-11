@@ -3,6 +3,41 @@
 	width:100%;
 	height:100%;
 	background:white;
+
+	.kerwin-enter {
+	  opacity: 0.01;
+	  transform: translateY(100px);
+	}
+
+	.kerwin-enter.kerwin-enter-active {
+	  opacity: 1;
+	  transform: translateY(0px);
+
+	  transition: all 500ms ease-in;
+	}
+
+	.kerwin-leave {
+	  opacity: 1;
+	  transform: translateY(0px);
+
+	}
+	.kerwin-leave.kerwin-leave-active {
+	  opacity: 0.01;
+	  transform: translateY(100px);
+
+	  transition: all 300ms ease-in;
+	}
+.headerNav{
+	background:white;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:84px;
+}
+.headerNavnone{
+	display:none;
+}	
 	.header{
 		display:flex;
 		li{
