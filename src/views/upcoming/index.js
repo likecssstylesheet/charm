@@ -4,11 +4,12 @@ import Info from './info'
 import './index.scss'
 import Category from './category'
 import Footer from '../../components/footer'
+import {connect} from 'react-redux'
 
 class Upcoming extends Component{
 	constructor(props) {
 	super(props);
-	
+	this.scroll = this.handleScroll.bind(this)
 	this.state = {
 		data:null
 	  };
@@ -26,6 +27,8 @@ class Upcoming extends Component{
 		</div>
 	}
 	componentDidMount(){
+		this.props.changewhite();
+		window.addEventListener('scroll', this.scroll);
 		axios({
 			url:'http://www.mei.com/appapi/upcoming/index/v3?platform_code=H5'
 					
@@ -36,5 +39,30 @@ class Upcoming extends Component{
 				
 	        })
     	}
+    handleScroll(){
+    	if(document.documentElement.scrollTop===0){
+  			document.documentElement.scrollTop=1;
+  		}
+    }
+    componentWillUnmount(){
+    	window.removeEventListener('scroll',this.scroll)
+    	document.documentElement.scrollTop=0;
+	}
 }
-export default Upcoming
+export default connect(
+  null,
+  {
+  changewhite(){
+      return {
+        type:'white',
+        payload:true
+      }
+    },
+  changeopacity(){
+      return {
+        type:'noWhite',
+        payload:false
+      }
+    }
+  }
+)(Upcoming)
