@@ -26,7 +26,7 @@ class Crossborder extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount(){
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
     getContent().then(res=>{
     	// console.log(res)
