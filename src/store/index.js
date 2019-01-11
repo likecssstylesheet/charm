@@ -4,7 +4,7 @@ import headerReducer from './Reducers/headerReducer'
 import {applyMiddleware} from "redux"
 import whiteReducer from './Reducers/whiteReducer'
 const reducer = combineReducers({
-	headerReducer,whiteReducer
+	headerReducer,whiteReducer 
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
