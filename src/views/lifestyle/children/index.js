@@ -4,7 +4,7 @@ import './index.scss'
 import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom'
 
-class Main extends React.Component {
+class Main extends Component {
   constructor(props) {
   	
     super(props);
