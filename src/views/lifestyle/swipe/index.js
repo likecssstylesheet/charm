@@ -1,5 +1,6 @@
 import { Carousel, WingBlank } from 'antd-mobile';
 import React,{Component} from 'react'
+import './index.scss'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,18 +24,26 @@ class App extends Component {
           //afterChange={index => console.log('slide to', index)}
         >
           {this.props.data.map(val => (
-          
-              <img
-                src={`${val.bigImgUrl}`}
-                alt="aaa"
-                style={{ width: '100%', verticalAlign: 'top' }}
-                key={val}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: '440' });
-                }}
-              />
+              <div class="banner">
+                <img
+                  src={`${val.main_image}`}
+                  alt="aaa"
+                  style={{ width: '100%', verticalAlign: 'top' }}
+                  key={val}
+                  onLoad={() => {
+                    // fire window resize event to change height
+                    window.dispatchEvent(new Event('resize'));
+                    this.setState({ imgHeight: '440' });
+                  }}
+                />
+                {
+                  <div>
+                      <h2>{val.main_title}</h2>
+                      <p>{val.sub_title}</p>
+                      <p>{val.description}</p>
+                  </div>
+                }
+              </div>
           ))}
         </Carousel>
       </WingBlank>
