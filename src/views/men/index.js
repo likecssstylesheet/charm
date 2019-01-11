@@ -40,16 +40,16 @@ class Men extends Component{
 				<div className="content">
 					<ul>
 						{
-							this.state.content.map(item=>
-								<li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
-									<img src={item.imageUrl} alt="图片出不来了"/>
-									<div>
-										<p>{item.englishName}</p>
-										<p>{item.chineseName}</p>
-										<p>{item.discountText}</p>
-									</div>
-								</li>
-							)
+						this.state.content.map(item=>
+							<li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
+								<img src={item.imageUrl} alt="图片出不来了"/>
+								<div>
+									<p>{item.englishName}</p>
+									<p>{item.chineseName}</p>
+									<p>{item.discountText}</p>
+								</div>
+							</li>
+						)
 						}
 					</ul>
 				</div>
