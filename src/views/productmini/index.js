@@ -20,6 +20,7 @@ class Preductmini extends Component{
 		this.props.showheader()
 	}
 	componentDidMount(){
+		this.props.hideheader()
 
 		axios(`http://www.mei.com/appapi/event/product/v3?pageIndex=1&categoryId=${this.props.match.params.id}&key=&sort=&timestamp=1547118699128&summary=685b86a502e7a72a1be3f06c6c8ad543&platform_code=H5`)
 		.then(res=>{
@@ -101,7 +102,7 @@ class Preductmini extends Component{
 		</div>
 	}
 	componentWillMount(){
-		this.props.hideheader()
+		
 	}
 	goback(){
 		

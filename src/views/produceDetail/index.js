@@ -70,7 +70,7 @@ class Produce extends Component{
 
 	componentWillMount(){
 		
-		this.props.hide();
+		
 	}
 
 	componentWillUnmount(){
@@ -78,6 +78,7 @@ class Produce extends Component{
 		this.props.show();
 	}
 	componentDidMount(){
+		this.props.hide();
 		getData.bind(this)()
 	}
 }
