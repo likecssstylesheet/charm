@@ -89,7 +89,7 @@ class Preductmini extends Component{
 											item.tagListDto.length==0?
 											<p></p>
 											:
-											item.tagListDto.map((value)=><span className="log" style={{color:`#${value.fontColor}`,border:`1px solid #${value.frameColor}`,backgroundColor:`#${value.fontBackgroudColor}`}}>
+											item.tagListDto.map((value)=><span className="log" style={{color:`#${value.fontColor}`,border:`1px solid #${value.frameColor}`,backgroundColor:`#${value.fontBackgroudColor}`}} key={value}>
 											{value.tag}</span>)
 										}
 										<p className="big">{item.brandName}</p>
