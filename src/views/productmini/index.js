@@ -83,13 +83,13 @@ class Preductmini extends Component{
 								null
 
 								:this.state.datalist.map(item=>
-									<li key={Math.random()} onClick={this.jump.bind(this,item.glsCode,this.state.id)}>
+									<li key={item.glsCode} onClick={this.jump.bind(this,item.glsCode,this.state.id)}>
 										<img src={item.imageUrl}/>
 										{
 											item.tagListDto.length==0?
 											<p></p>
 											:
-											item.tagListDto.map((value)=><span className="log" style={{color:`#${value.fontColor}`,border:`1px solid #${value.frameColor}`,backgroundColor:`#${value.fontBackgroudColor}`}} key={value}>
+											item.tagListDto.map((value)=><span className="log" style={{color:`#${value.fontColor}`,border:`1px solid #${value.frameColor}`,backgroundColor:`#${value.fontBackgroudColor}`}} key={value.tag}>
 											{value.tag}</span>)
 										}
 										<p className="big">{item.brandName}</p>
