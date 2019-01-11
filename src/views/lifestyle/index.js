@@ -1,11 +1,10 @@
 import React,{Component} from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
-import ReactDom from 'react-dom'
 import axios from 'axios'
 import './index.scss'
 import Main from './children'
 import Footer from '../../components/footer'
-class Lifestyle extends React.Component {
+class Lifestyle extends Component {
   state = {
     data1: []
    
