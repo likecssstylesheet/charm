@@ -8,7 +8,7 @@ class Des extends Component{
 			<del>￥{this.props.data.marketPrice}</del>
 			<strong>￥{this.props.data.price}</strong>
 			{this.props.data.newTagList.map((item) =>
-				<span key={item.labelType} className="likea">{item.tag}</span>)}
+				<span key={item.tag} className="likea">{item.tag}</span>)}
 			<div className="guess">
 				<span className="iconfont icon-likaiim"></span>
 				<span>{this.props.data.deliver_date}</span>		
