@@ -58,7 +58,7 @@ class Lifestyle extends React.Component {
     
  	}
 
-      <Main/>
+      <Main {...this.props}/>
       <Footer/>
       </div>
     )

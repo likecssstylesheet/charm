@@ -57,7 +57,7 @@ class Main extends React.Component {
       >
       <div className="nav">
         {this.state.data.map(i => (
-          <div key={i.eventId} className="content">
+          <div key={i.eventId} className="content" onClick={this.handleclick.bind(this,eventId)}>
             	<div className="description">
             		<p>{i.englishName}</p>
             		<p>{i.chineseName}</p>
@@ -70,6 +70,10 @@ class Main extends React.Component {
         </div>
       </PullToRefresh>
     </div>);
+  }
+
+  handleclick(data){
+  		this.props.history.push(`/productmini/${data}`)
   }
 }
 
