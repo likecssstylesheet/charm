@@ -23,6 +23,7 @@ import Gift from '../views/gift'
 import Inputfind from '../views/input'
 import Trademark from '../views/trademark'
 import ProductMini from '../views/productmini'
+import DetailName from '../views/detailName'
 const router = (
 	<Provider store={store}>
 		<Router>
@@ -40,6 +41,7 @@ const router = (
 					<Route path="/trademark" component={Trademark}></Route>
 					<Route path="/input" component={Inputfind}></Route>
 
+					<Route path="/detailName/:id" component={DetailName}></Route>
 					<Route path="/productdetail/:data" component={produceDetail}></Route>
 					<Route path="/brand/:id" component={Brand}></Route>
 					<Route path="/productlist/:id" component={Productlist}></Route>
