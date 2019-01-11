@@ -27,10 +27,7 @@ class App extends Component {
   	window.onscroll=this.scroll.bind(this);	
   }
   scroll(){
-  	
 
-  	
- 
   		if(document.documentElement.scrollTop>0||window.location.href.slice(-8)==='upcoming'){
 
   			this.props.changewhite()
