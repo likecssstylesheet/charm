@@ -8,7 +8,7 @@ class Recommend extends Component{
 			{this.props.data.map((item)=>
 				<div key={item.productId}>
 					<span onClick={this.restart.bind(this,`/productdetail/eventCode=${item.eventCode}&glsCode=${item.glsCode}`)}>
-						<img src={item.imgUrl}/>
+						<img src={item.imgUrl} alt="图片显示失败"/>
 						<span className="brand">{item.brand_name}</span>
 						<span className="name">{item.product_name}</span>
 						<span className="price">￥{item.itemPriceDto.price}</span>
