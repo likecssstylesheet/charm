@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import Swipe from './swipe'
 import {getBanner,getImg,getContent} from './module.js'
-import {connect} from 'react-redux'
 import './index.scss'
 import Footer from '../../components/footer'
 
@@ -32,7 +31,7 @@ class Produce extends Component{
 					<ul>
 						{
 							this.state.content.map(item=>
-								<li key={item.eventId}>
+								<li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
 									<img src={item.imageUrl} alt="图片出不来了"/>
 									<div>
 										<p>{item.englishName}</p>
@@ -65,10 +64,9 @@ class Produce extends Component{
 				content:res
 			})
 		})
-	}	
-
-	componentWillUnmount(){
-		
+	}
+	handleDetail(id){
+		this.props.history.push(`/productmini/${id}`)
 	}
 }
 
