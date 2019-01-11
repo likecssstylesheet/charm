@@ -1,75 +1,76 @@
 import React,{Component} from 'react'
-import axios from 'axios'
+import Swipe from './swipe'
+import {getBanner,getImg,getContent} from './module.js'
+import {connect} from 'react-redux'
+import './index.scss'
+import Footer from '../../components/footer'
 
 class Produce extends Component{
 
 	constructor(props) {
 	    super(props);
-	
 	    this.state = {
-	    	productData:null,
-	    	productPrice:null,
-	    	recommend:null
-	  };
+	    	banner:[],
+	    	imgs:[],
+	    	content:[]
+	  	}
 	}
 
 	render(){
-		return (
-			<div id="detail">
-				
+		return <div id="kids">
+				<Swipe data={this.state.banner}></Swipe>
+				<ul className="nav">
+					{
+						this.state.imgs.map(item=>
+							<li key={item.siloId}>
+								<img src={item.categoryImgStr} alt="图片出不来了"/>
+							</li>
+						)
+					}
+				</ul>
+				<div className="lihaibo">
+					<ul>
+						{
+							this.state.content.map(item=>
+								<li key={item.eventId}>
+									<img src={item.imageUrl} alt="图片出不来了"/>
+									<div>
+										<p>{item.englishName}</p>
+										<p>{item.chineseName}</p>
+										<p>{item.discountText}</p>
+									</div>
+								</li>
+							)
+						}
+					</ul>
+				</div>
+				<Footer></Footer>
 			</div>
-			)
+
 	}
 
 	componentWillMount(){
-		
-		this.props.hide();
-	}
+		getBanner().then(res=>{
+			this.setState({
+				banner:res
+			})
+		})
+		getImg().then(res=>{
+			this.setState({
+				imgs:res
+			})
+		})
+		getContent().then(res=>{
+			this.setState({
+				content:res
+			})
+		})
+	}	
 
 	componentWillUnmount(){
 		
-		this.props.show();
-	}
-	componentDidMount(){
-		axios({
-			url:`http://www.mei.com/appapi/product/getAppProductDetailUrl/v3?${this.props.match.params.data}`
-					
-			}).then((res)=>{
-				// console.log(res.data)
-				axios({
-					url:`http://www.mei.com/appapi/product/getProductPrice/v3?productId=${res.data.productId}&userLevel=2&type=0`
-				}).then(res=>{
-					// console.log(res.data)
-					this.setState({
-						productPrice:res.data
-					})
-				})
-
-				axios({
-					url:`http://www.mei.com/appapi/product/detail/v3?categoryId=${res.data.eventId}&productId=${res.data.productId}&platform_code=H5&timestamp=${time()}&summary=ec7fd7ec49470eae3632aa3b865a4eee`
-				}).then(res=>{
-					// console.log(res.data)
-					this.setState({
-						productData:res.data
-					})
-				})
-
-				axios({
-					url:`http://www.mei.com/appapi/product/hot/v3?categoryId=${res.data.eventId}&productId=${res.data.productId}&platform_code=H5`
-				}).then(res=>{
-					console.log(res.data)
-					this.setState({
-						recommend:res.data
-					})
-				})
-			})
 	}
 }
 
-
-function time(){
-	var date = new Date();
-	return date.getTime();
-}
 
 export default Produce
