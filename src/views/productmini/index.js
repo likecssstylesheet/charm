@@ -45,8 +45,8 @@ class Preductmini extends Component{
 							<div>
 								<ReactCSSTransitionGroup
 								          transitionName="example"
-								          transitionEnterTimeout={500}
-								          transitionLeaveTimeout={300}>
+								          transitionEnterTimeout={700}
+								          transitionLeaveTimeout={500}>
 								 { this.state.position?
 								
 								<div className={this.state.position? 'headerNav':null}>
@@ -160,7 +160,7 @@ class Preductmini extends Component{
 		
 	}
 	isposition(){
-		if(document.documentElement.scrollTop>160){
+		if(document.documentElement.scrollTop>100){
 			this.setState({
 				position:false
 			})

@@ -4,22 +4,26 @@
 	height:100%;
 	background:white;
 
-	.example-enter {
-  opacity: 0.01;
+.example-enter {
+
+  transform:translateY(-100px);
 }
 
 .example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+
+  transform:translateY(0px);
+  transition: opacity 700ms ease-in;
 }
 
 .example-leave {
-  opacity: 1;
+ 
+  transform:translateY(0px);
 }
 
 .example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+ 
+   transform:translateY(-100px);
+  transition:  500ms ease-in;
 }
 .headerNav{
 	background:white;
