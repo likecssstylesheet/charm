@@ -18,7 +18,7 @@ class Trademark extends Component {
 	  	home:{},
 	  	beauty:{},
 	  	women:{},
-	  	men:{},
+	  	men:{}
 	  };
 	}
 	render(){

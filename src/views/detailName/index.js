@@ -11,14 +11,15 @@ class DetailName extends Component{
 	  	isShow:false,
 	  	datalist:[],
 	  	word:[],
-	  	shop:''
+	  	shop:'',
+	  	list:['女士','男士','美妆','家居','婴童']
 	  };
 	}
 	render(){
 		return <div id="detailname">
 			<header>
 				<a href="/#/trademark" className="left"><span className="iconfont">&#xe61e;</span></a>
-				<span className="center">女士品牌</span>
+				<span className="center">{this.state.list[this.props.match.params.id.slice(-1)-1]}品牌</span>
 				<a className="right" onClick={this.handleShow.bind(this)}>
 					<span className="iconfont">&#xe678;</span>
 					{
@@ -59,6 +60,7 @@ class DetailName extends Component{
 	componentWillMount(){
 	}
 	componentDidMount(){
+		console.log(this.props.id)
 		axios({
 			url:`http://www.mei.com/appapi/brand/more/v3?siloId=${this.props.match.params.id}`
 		}).then(res=>
