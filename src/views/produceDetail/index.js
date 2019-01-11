@@ -31,7 +31,7 @@ class Produce extends Component{
 
 	render(){
 		return (
-			<div id="detail" className={this.state.modalShow?'modal':null}>
+			<div id="detail">
 				{this.state.productData&&this.state.productPrice?
 					<div>
 					<Head {...this.props}>
