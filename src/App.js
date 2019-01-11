@@ -27,12 +27,9 @@ class App extends Component {
   	window.onscroll=this.scroll.bind(this);	
   }
   scroll(){
-<<<<<<< HEAD
+
   	
-  	
-  		
-=======
->>>>>>> 227ecdcc08363ebfdbaf18c532eb82c7e98cbe9d
+ 
 
   		if(document.documentElement.scrollTop>0||window.location.href.slice(-8)==='upcoming'){
 
