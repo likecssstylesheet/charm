@@ -28,7 +28,7 @@ class App extends Component {
   }
   scroll(){
   	
-  		if(document.documentElement.scrollTop>0){
+  		if(document.documentElement.scrollTop>0||window.location.href.slice(-8)==='upcoming'){
   			this.props.changewhite()
   		}
   		else{

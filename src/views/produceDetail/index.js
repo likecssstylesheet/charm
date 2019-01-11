@@ -13,6 +13,7 @@ import Brand from './brand'
 import Comment from './comment'
 import Recommend from './recommend'
 import Nav from './nav'
+// import Popup from './popup'
 
 class Produce extends Component{
 
@@ -23,13 +24,14 @@ class Produce extends Component{
 	    	productData:null,
 	    	productPrice:null,
 	    	recommend:null,
-	    	productId:null
+	    	productId:null,
+	    	modalShow:true
 	  };
 	}
 
 	render(){
 		return (
-			<div id="detail">
+			<div id="detail" className={this.state.modalShow?'modal':null}>
 				{this.state.productData&&this.state.productPrice?
 					<div>
 					<Head {...this.props}>
@@ -54,6 +56,7 @@ class Produce extends Component{
 				</div>
 				:null
 				}
+				
 			</div>
 			)
 	}
