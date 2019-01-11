@@ -57,7 +57,6 @@ class DetailName extends Component{
 		</div>
 	}
 	componentWillMount(){
-		
 	}
 	componentDidMount(){
 		axios({
