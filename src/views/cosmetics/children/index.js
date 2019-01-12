@@ -4,6 +4,7 @@ import Footer from '../../../components/footer'
 import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom'
 
+
 class Main extends Component {
   constructor(props) {
   	
@@ -20,9 +21,7 @@ class Main extends Component {
   componentWillUnmout(){
   	window.removeEventListener('scroll',this.header)
   }
-  componentWillUpdate(){
-  	console.log(111111)
-  }
+ 
 
   componentDidMount() {
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
@@ -34,6 +33,7 @@ class Main extends Component {
     })
 
     window.addEventListener('scroll',this.header)
+    
     	
   }
 
@@ -67,7 +67,8 @@ class Main extends Component {
           })
         }}
       >
-      <div className="nav">
+      <div className="nav" >
+
       		{this.props.children}
         {this.state.data.map(i => (
           <div key={i.eventId} className="content" onClick={this.handle.bind(this,i.eventId)}>
@@ -80,7 +81,7 @@ class Main extends Component {
 
           </div>
         ))}
-        <Footer></Footer>
+        <Footer ></Footer>
         </div>
       </PullToRefresh>
     </div>);
