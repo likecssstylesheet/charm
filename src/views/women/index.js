@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {getimg,getul,getlist} from './model.js'
 import {NavLink} from 'react-router-dom'
 import Footer from '../../components/footer'
+import { Toast} from 'antd-mobile'
 class Girls extends Component{
 	constructor(props){
 		super(props)
@@ -13,6 +14,9 @@ class Girls extends Component{
 	}
 
 	componentWillMount() {
+		Toast.loading('玩命加载中...', 1, () => {
+		  
+		 },true);
 			getimg().then(res => {
 				this.setState({
 					looplist: res
