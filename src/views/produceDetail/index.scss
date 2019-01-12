@@ -158,6 +158,12 @@
 						font-size:14px;
 						display: block;
 					}
+					div.clear{
+						height:0;
+						width:100%;
+						clear:both;
+						overflow: hidden;
+					}
 				}
 			}
 			img{
