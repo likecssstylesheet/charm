@@ -5,6 +5,7 @@ import Footer from '../../components/footer'
 import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
+import { Toast} from 'antd-mobile'
 
 class Men extends Component{
 	constructor(props) {
@@ -107,6 +108,9 @@ class Men extends Component{
 		})
 	}
 	componentDidMount() {
+		Toast.loading('玩命加载中...', 1, () => {
+		  
+		 },true);
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
     getContent().then(res=>{
     	// console.log(res)

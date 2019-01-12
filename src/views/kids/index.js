@@ -7,7 +7,6 @@ import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 import { Toast} from 'antd-mobile'
-
 class Produce extends Component{
 	constructor(props) {
 	    super(props);
@@ -50,7 +49,7 @@ class Produce extends Component{
 		<ul className="nav">
 			{
 				this.state.imgs.map((item,index)=>
-					<li key={item.siloId+index}>
+					<li key={index}>
 						<img src={item.categoryImgStr} alt="图片出不来了"/>
 					</li>
 				)

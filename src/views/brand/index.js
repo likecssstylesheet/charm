@@ -15,8 +15,11 @@ class Brand extends Component {
 			gooddata: [],
 			hotlist: [],
 			number: '',
-			productlist:[],
-			current:1
+			productlist: [],
+			current: 0,
+			isShow: false,
+			isChange:true,
+			isYes: false 
 		}
 	}
 
@@ -39,9 +42,14 @@ class Brand extends Component {
 			})
 			// console.log(res.categoryProducts)
 		})
+
+
+		window.addEventListener('scroll', this.handleScroll.bind(this))
+
 	}
 	componentWillUnmount() {
 		this.props.show()
+		window.removeEventListener('scroll', this.handleScroll.bind(this)) 
 	}
 
 	render() {
@@ -49,6 +57,28 @@ class Brand extends Component {
 		{
 				this.state.brandinfo?
 				<div>
+				<header className={this.state.isChange?'':'bgcolor'}>
+					<a href="" className="left"><span className={this.state.isChange?"iconfont":"focus iconfont"}>&#xe61e;</span></a>
+					<span className="center">{this.state.isChange?'':this.state.brandinfo.brandDetail.brandName}</span>
+					<a className="right" onClick={this.handleShow.bind(this)}>
+						<span className={this.state.isChange?"iconfont":"focus iconfont"}>&#xe678;</span>
+						{
+							this.state.isShow?
+							<span className="three"></span>
+							:null
+						}
+					</a>
+
+					{
+						this.state.isShow?
+						<ul>
+							<li><a href="#">首页</a></li>
+							<li><a href="#">购物袋</a></li>
+							<li><a href="#" className="bu">个人中心</a></li>
+						</ul>
+						:null
+					}
+				</header>
 					<div className="brandImg">
 						<img src={this.state.brandinfo.brandDetail.brandPageImage}/>
 						<h1>{this.state.brandinfo.brandDetail.brandName}</h1>
@@ -108,13 +138,13 @@ class Brand extends Component {
 		}
 
 		
-		<div className="goodthing">
-			<h2></h2>
-		</div>
 		{
 			this.state.gooddata.length !==0?
 			<div >
-				<ul className="myheader">
+				<div className="goodthing">
+					<h2></h2>
+				</div>
+				<ul className={this.state.isYes?'myheader location':'myheader '}>
 					{
 						this.state.gooddata.map((item,index) => {
 							return (
@@ -130,7 +160,7 @@ class Brand extends Component {
 							<li key={item.productId} onClick={this.handleDetail.bind(this,item.eventId,item.glsCode)}>
 								<img src={item.fileUrl}/>
 							<div className="detail">
-								<div>{item.tagListDto.length!==0?item.tagListDto.map(item => <span key={item.tag}>{item.tag}</span>):''}</div>
+								<div>{item.tagListDto ?item.tagListDto.map(item => <span key={item.tag}>{item.tag}</span>):''}</div>
 								<div><em>{item.brandName}</em></div>
 								<div><em>{item.productName}</em></div>
 								<div className="last">
@@ -160,6 +190,35 @@ class Brand extends Component {
 			current: index
 		})
 	}
+	handleShow() {
+		this.setState({
+			isShow: !this.state.isShow
+		})
+	}
+	handleScroll = e => {
+	  
+	 if(e.srcElement.scrollingElement.scrollTop> 214 && e.srcElement.scrollingElement.scrollTop< 980) {
+	 	this.setState({
+	 		isChange: false,
+	 		isYes: false
+	 	})
+	 	// console.log(e.srcElement.scrollingElement.scrollTop)
+	 }else if(e.srcElement.scrollingElement.scrollTop> 980) {
+	 	this.setState({
+	 		isYes: true
+	 	}) 
+	 }
+	 else {
+	 	this.setState({
+	 		isChange: true
+	 	})
+	 }
+	      		
+	      
+
+	}
+
+
 	handleDetail(eventCode,glsCode) {
 		this.props.history.push(`/productdetail/eventCode=${eventCode}&glsCode=${glsCode}`)
 	}
