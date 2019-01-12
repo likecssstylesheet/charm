@@ -45,10 +45,8 @@ class Girls extends Component{
 									 <ul className="nav">
 									 {
 										this.state.ullist.map(item => {
-											return	<li key={item.categoryTwoId}>
-												<NavLink to="">	
+											return	<li key={item.categoryTwoId} onClick={this.handleDetail.bind(this,item.eventId)}>
 													<img src={item.categoryImgStr} alt=""/>
-												</NavLink>
 											</li>
 										})				
 									 }
@@ -62,10 +60,8 @@ class Girls extends Component{
 				<ul className="data_info">
 					 {
 						this.state.navlist.map(item => {
-							return	<li key={item.eventId}>
-								<NavLink to="">	
+							return	<li onClick={this.handleDetail.bind(this,item.eventId)} key={item.eventId}>
 									<img src={item.imageUrl} alt=""/>
-								</NavLink>
 									<div>
 										<p>{item.englishName}</p>
 										<p>{item.chineseName}</p>
@@ -83,6 +79,9 @@ class Girls extends Component{
 
 	handleClick(id) {
 		this.props.history.push(`/brand/${id}`)
+	}
+	handleDetail(categoryOneId) {
+		this.props.history.push(`/productmini/${categoryOneId}`)
 	}
 }
 

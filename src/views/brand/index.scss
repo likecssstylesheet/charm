@@ -1,4 +1,88 @@
 #brand_more {
+			.bgcolor {
+				background: #fff;
+				border-bottom: 0;
+			}
+	header{
+			width:100%;
+			position:fixed;
+			// background: #fff;
+			height: 45px;
+			z-index:10;
+				a{
+				width: 20%;
+				height: 45px;
+				line-height: 45px;
+				text-align: center;
+					span{
+						font-size: 20px;
+						color:#fff;
+					}
+						.focus {
+							color: #000;
+							font-size: 20px;
+						}
+				}
+				.left{
+					float: left;
+				}
+				.right{
+					position: relative;
+					float: right;
+					.iconfont{
+						font-size: 30px;
+					}
+					.three{
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						bottom:0;
+						width: 0;
+						height:0;
+						border-right:10px solid rgba(255,255,255,0);
+						border-bottom: 10px solid hsla(0,0%,96%,.96);
+						border-left: 10px solid rgba(255,255,255,0)
+					}
+				}
+			.center{
+				width: 60%;
+				line-height:45px;
+				height: 45px;
+				font-size: 16px;
+				color: #000;
+				text-align:center;
+				font-weight: 700;
+				float:left;
+			}
+			ul{
+				position: absolute;
+				right: 0;
+				top:45px;
+				width:25%;
+				height:150px;
+				background:hsla(0,0%,96%,.96);
+				z-index:1;
+				li{
+					height: 50px;
+					padding:0 15px;
+					box-sizing: border-box;
+					a{
+						display:inline-block;
+						height: 50px;
+						line-height: 50px;
+						text-align: center;
+						width: 100%;
+						border-bottom: 1px solid #ccc;
+						color: #000;
+						text-decoration: none
+					}
+					.bu{
+						border: 0;
+					}
+				}
+			}
+		}
+
 	ul::-webkit-scrollbar {
 		display: none;
 	}
@@ -137,12 +221,21 @@
 			background: url('/images/goodrec.png') no-repeat;
 			background-size: contain;
 		}
-	}
+	}	
+		.location {
+			position: fixed;
+			left: 0;
+			top: 20px;
+			z-index: 100;
+			border: none;
+		}
 		ul.myheader {
 			margin-top:20px;
 			display: flex;
 			overflow: auto;
 			border-bottom: 1px solid #666;
+			background: #fff;
+			border: none;
 			li {
 				text-align: center;
 				flex: 1;
