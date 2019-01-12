@@ -19,7 +19,7 @@ class Main extends Component {
     };
   }
   componentWillUnmout(){
-  	window.removeEventListener('scroll',this.header)
+  	// window.removeEventListener('scroll',this.header)
   }
  
 
@@ -32,7 +32,7 @@ class Main extends Component {
     	})
     })
 
-    window.addEventListener('scroll',this.header)
+    // window.addEventListener('scroll',this.header)
     
     	
   }
