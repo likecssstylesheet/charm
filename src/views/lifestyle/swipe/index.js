@@ -27,7 +27,7 @@ class App extends Component {
           //afterChange={index => console.log('slide to', index)}
         >
           {this.props.data.map(val => (
-              <div className="banner" key={val.id} onClick={this.handleclick.bind(this,val.id)}>
+              <div className="banner" key={val.id} onClick={this.handleclick.bind(this,val.link_url.split('/').slice(-1)[0])}>
 
                 <img
                   src={`${val.main_image}`}
