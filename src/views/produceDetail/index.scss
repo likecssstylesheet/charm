@@ -6,7 +6,7 @@
 		div.swipe{
 			box-shadow: #ddd 2px 2px 2px,#ddd -2px 0 2px;
 			margin-bottom:10px;
-			touch-action:none;
+			
 		}
 		div.desp{
 			h1{
@@ -142,17 +142,27 @@
 				padding:20px 0;
 				overflow: hidden;
 				margin:0;
-				a{
+				a{	display: block;
 					color:#333;
+					padding:10px 0;
 					overflow: hidden;
 					strong{
 						font-weight: 800;
 						font-size:20px;
+						display: block;
+						float:left;
 					}
 					span{
 						float:right;
 						color:#666;
 						font-size:14px;
+						display: block;
+					}
+					div.clear{
+						height:0;
+						width:100%;
+						clear:both;
+						overflow: hidden;
 					}
 				}
 			}

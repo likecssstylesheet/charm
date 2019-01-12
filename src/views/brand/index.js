@@ -26,7 +26,6 @@ class Brand extends Component {
 	componentDidMount() {
 		this.props.hide()
 		getBrandInfo(this.props.match.params.id).then(res => {
-			// console.log(res)
 			this.setState({
 				data: res.newProductTop10,
 				hotlist: res.hotProductTop10,

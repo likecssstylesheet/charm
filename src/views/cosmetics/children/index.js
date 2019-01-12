@@ -1,17 +1,16 @@
 import React,{Component} from 'react'
-
-
-
 import axios from 'axios'
-
+import Footer from '../../../components/footer'
 import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom'
 
-class Main extends React.Component {
+
+class Main extends Component {
   constructor(props) {
   	
     super(props);
     this.index=1;
+    this.header=this.scrollto
     this.state = {
       refreshing: false,
       down: false,
@@ -19,6 +18,10 @@ class Main extends React.Component {
       data: [],
     };
   }
+  componentWillUnmout(){
+  	window.removeEventListener('scroll',this.header)
+  }
+ 
 
   componentDidMount() {
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
@@ -28,7 +31,15 @@ class Main extends React.Component {
      		 data: res.data.eventList
     	})
     })
+
+    window.addEventListener('scroll',this.header)
     
+    	
+  }
+
+  scrollto(){
+
+  	
   }
 
   render() {
@@ -56,7 +67,9 @@ class Main extends React.Component {
           })
         }}
       >
-      <div className="nav">
+      <div className="nav" >
+
+      		{this.props.children}
         {this.state.data.map(i => (
           <div key={i.eventId} className="content" onClick={this.handle.bind(this,i.eventId)}>
             	<div className="description">
@@ -64,10 +77,11 @@ class Main extends React.Component {
             		<p>{i.chineseName}</p>
             		<p>{i.discountText}</p>
             	</div>
-            	<img src={i.imageUrl} alt=""/>
+            	<img className="mini" src={i.imageUrl} alt=""/>
 
           </div>
         ))}
+        <Footer ></Footer>
         </div>
       </PullToRefresh>
     </div>);
