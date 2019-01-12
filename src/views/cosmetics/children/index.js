@@ -9,12 +9,19 @@ class Main extends Component {
   	
     super(props);
     this.index=1;
+    this.header=this.scrollto
     this.state = {
       refreshing: false,
       down: false,
       height: document.documentElement.clientHeight,
       data: [],
     };
+  }
+  componentWillUnmout(){
+  	window.removeEventListener('scroll',this.header)
+  }
+  componentWillUpdate(){
+  	console.log(111111)
   }
 
   componentDidMount() {
@@ -25,7 +32,14 @@ class Main extends Component {
      		 data: res.data.eventList
     	})
     })
-    
+
+    window.addEventListener('scroll',this.header)
+    	
+  }
+
+  scrollto(){
+
+  	console.log(document.documentElement.scrollTop)
   }
 
   render() {

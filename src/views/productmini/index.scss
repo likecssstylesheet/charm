@@ -236,8 +236,8 @@ transform:translateY(0);
 }
 
 .kerwin-leave.kerwin-leave-active {
-	transform:translateY(100%);
-  opacity: 0.01;
+	transform:translateY(-100%);
+  	opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
 #master{
