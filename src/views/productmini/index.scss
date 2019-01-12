@@ -5,23 +5,23 @@
 	background:white;
 
 .example-enter {
-
+	opacity: 0.5;
   transform:translateY(-100px);
 }
 
 .example-enter.example-enter-active {
-
+	opacity: 1;
   transform:translateY(0px);
   transition: opacity 700ms ease-in;
 }
 
 .example-leave {
- 
+ opacity: 1;
   transform:translateY(0px);
 }
 
 .example-leave.example-leave-active {
- 
+ 	opacity: 0.5;
    transform:translateY(-100px);
   transition:  500ms ease-in;
 }
@@ -220,7 +220,7 @@
 }
 
 .kerwin-enter {
-	transform:translateY(100%);
+	transform:translateY(667px);
   opacity: 0.01;
 }
 
@@ -231,14 +231,14 @@
 }
 
 .kerwin-leave {
-transform:translateY(0);
+transform:translateY(667px);
   opacity: 1;
 }
 
 .kerwin-leave.kerwin-leave-active {
-	transform:translateY(-100%);
+	transform:translateY(0);
   	opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 500ms ease-in;
 }
 #master{
 	box-sizing:border-box;
@@ -246,7 +246,7 @@ transform:translateY(0);
 	top:0;
 	z-index:11;
 	position:fixed;
-	background:white;
+	background:#fff;
 	height:100%;
 	width:100%;
 	.prizearound{
@@ -335,4 +335,7 @@ transform:translateY(0);
 				    background-size: contain;
 		}
 	}
+}
+#marginTop{
+	padding-top:84px;
 }

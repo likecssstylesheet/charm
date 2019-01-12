@@ -80,7 +80,7 @@ class Preductmini extends Component{
 							:null}	
 							</ReactCSSTransitionGroup>	
 
-								<div className="productsAll">
+								<div className="productsAll" id={this.state.position?'marginTop':null}>
 									<div className="smalltitle">
 										{
 										this.state.content.couponScheme.eventCoupon==0?
@@ -128,7 +128,7 @@ class Preductmini extends Component{
 						}
 							<ReactCSSTransitionGroup
 							          transitionName="kerwin"
-							          transitionEnterTimeout={700}
+							          transitionEnterTimeout={500}
 							          transitionLeaveTimeout={500}>
 							{this.state.changestate?
 							
