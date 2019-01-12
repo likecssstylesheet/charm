@@ -44,8 +44,8 @@ class Men extends Component{
 	        }}
 	      >	
 			{
-				this.state.banner.map(item=>
-				<div className="banner">
+				this.state.banner.map((item,index)=>
+				<div className="banner" key={index}>
 					<img src={item.main_image} alt="图片不好使啦"/>
 					<div>
 						<h2>{item.main_title}</h2>
@@ -57,8 +57,8 @@ class Men extends Component{
 			}
 			<ul className="nav">
 				{
-					this.state.nav.map(item=>
-						<li key={item.siloId}>
+					this.state.nav.map((item,index)=>
+						<li key={item.siloId+index}>
 							<img src={item.categoryImgStr} alt="图片不好使啦"/>
 						</li>
 					)
