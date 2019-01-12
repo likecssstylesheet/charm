@@ -4,6 +4,7 @@ import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 import Footer from '../../components/footer'
+
 import { Toast} from 'antd-mobile'
 // import {getContent} from './module.js'
 function getContent(){
@@ -23,7 +24,6 @@ class Crossborder extends React.Component {
       down: true,
       height: document.documentElement.clientHeight,
       data:[],
-      updata:[]
     };
   }
 
@@ -33,13 +33,13 @@ class Crossborder extends React.Component {
         
        },true);
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
-    getContent().then(res=>{
+    getContent().then(res=>
     	// console.log(res)
 	     this.setState({
 	      height: hei,
 	      data:res
 	    })	
-    })
+    )
   }
 
   render(){

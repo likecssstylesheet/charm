@@ -27,9 +27,10 @@ class App extends Component {
           //afterChange={index => console.log('slide to', index)}
         >
 
+
+
           {this.props.data.map((val,index) => (
               <div className="banner" key={index}>
-
                 <img
                   src={`${val.main_image}`}
                   alt="aaa"

@@ -47,7 +47,9 @@ class Men extends Component{
 			{
 				this.state.banner.map((item,index)=>
 				<div className="banner" key={index}>
+				<a href={`#/brand/${item.link_url.slice(-19)}`}>
 					<img src={item.main_image} alt="图片不好使啦"/>
+				</a>
 					<div>
 						<h2>{item.main_title}</h2>
 						<p>{item.sub_title}</p>

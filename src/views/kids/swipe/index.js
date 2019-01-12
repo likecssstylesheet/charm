@@ -23,7 +23,7 @@ class App extends Component {
           //afterChange={index => console.log('slide to', index)}
         >
           {this.props.data.map(val => (
-          
+            <a href={`#/brand/${val.link_url.slice(-19)}`} key={val}>
               <img
                 src={`${val.main_image}`}
                 alt="aaa"
@@ -35,6 +35,7 @@ class App extends Component {
                   this.setState({ imgHeight: '440' });
                 }}
               />
+              </a>
           ))}
         </Carousel>
       </WingBlank>
