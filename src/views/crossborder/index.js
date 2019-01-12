@@ -27,6 +27,10 @@ class Crossborder extends React.Component {
   }
 
   componentDidMount(){
+    componentWillMount() {
+      Toast.loading('玩命加载中...', 1, () => {
+        
+       },true);
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
     getContent().then(res=>{
     	// console.log(res)
