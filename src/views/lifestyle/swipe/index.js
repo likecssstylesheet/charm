@@ -13,6 +13,9 @@ class App extends Component {
   componentDidMount() {
     // simulate img loading
   }
+  handleclick(data){
+    this.props.ccc.history.push(`/brand/${data}`)
+  }
   render() {
     return (
       <WingBlank>
@@ -24,12 +27,12 @@ class App extends Component {
           //afterChange={index => console.log('slide to', index)}
         >
           {this.props.data.map(val => (
-              <div class="banner">
+              <div className="banner" key={val.id} onClick={this.handleclick.bind(this,val.id)}>
                 <img
                   src={`${val.main_image}`}
                   alt="aaa"
                   style={{ width: '100%', verticalAlign: 'top' }}
-                  key={val}
+                  
                   onLoad={() => {
                     // fire window resize event to change height
                     window.dispatchEvent(new Event('resize'));

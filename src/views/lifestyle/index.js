@@ -7,6 +7,8 @@ import Swipe from './swipe'
 import {getBanner,getContent} from './module.js'
 import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom';
+import { Toast} from 'antd-mobile'
+
 
 class Lifestyle extends Component {
   constructor(props) {
@@ -23,6 +25,9 @@ class Lifestyle extends Component {
   }
 
   componentDidMount() {
+    Toast.loading('玩命加载中...', 1, () => {
+       
+     },true);
     getBanner().then(res=>{
         this.setState({
           banner:res
@@ -62,7 +67,7 @@ class Lifestyle extends Component {
         }}
       >
       <div>
-        <Swipe data={this.state.banner}></Swipe>
+        <Swipe data={this.state.banner} ccc={this.props}></Swipe>
       <div className="sort">
          <img alt="" src="https://cdn13.mei.com/category/20180621/a789fab3fbc384262a0a542c5ae8ca0ae15d3cf3671d4998.jpg"/>
        </div>

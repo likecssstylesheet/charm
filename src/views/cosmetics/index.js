@@ -16,15 +16,15 @@ class Cosmetics extends Component{
 	  };
 	}
 	componentWillMount(){
-		Toast.loading('玩命加载中...', 3, () => {
-		   console.log('Load complete !!!')
-		 },false);
+		Toast.loading('玩命加载中...', 1, () => {
+		  
+		 },true);
 	}
 	componentDidMount(){
 		
 
 		getbanner().then(res=>{
-			Toast.hide();
+			
 			this.setState({
 				banner:res
 			})
@@ -38,6 +38,9 @@ class Cosmetics extends Component{
 		})
 
 
+	}
+	clickpush(data){
+		this.props.history.push(`/productmini/${data}`)
 	}
 
 	render(){
@@ -56,7 +59,7 @@ class Cosmetics extends Component{
 								</div>
 							</div>
 						
-						<div className="classify">
+						<div className="classify" >
 							<ul>
 								{this.state.list.map(item=><li key={item.categoryTwoId}> <img src={item.categoryImgStr} alt=""/></li>)}
 							</ul>
