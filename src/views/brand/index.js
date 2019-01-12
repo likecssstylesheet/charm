@@ -9,13 +9,13 @@ class Brand extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data: [],
+			data: '',
 			brandinfo: null,
 			status: true,
-			gooddata: [],
-			hotlist: [],
+			gooddata: '',
+			hotlist: '',
 			number: '',
-			productlist: [],
+			productlist: '',
 			current: 0,
 			isShow: false,
 			isChange:true,
@@ -139,7 +139,7 @@ class Brand extends Component {
 
 		
 		{
-			this.state.gooddata.length !==0?
+			this.state.gooddata?
 			<div >
 				<div className="goodthing">
 					<h2></h2>
