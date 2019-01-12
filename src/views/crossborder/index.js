@@ -4,6 +4,7 @@ import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 import Footer from '../../components/footer'
+import { Toast} from 'antd-mobile'
 // import {getContent} from './module.js'
 function getContent(){
 	return axios({
@@ -27,7 +28,7 @@ class Crossborder extends React.Component {
   }
 
   componentDidMount(){
-    componentWillMount() {
+    
       Toast.loading('玩命加载中...', 1, () => {
         
        },true);
