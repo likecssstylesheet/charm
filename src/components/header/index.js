@@ -50,7 +50,7 @@ class Header extends Component{
 						<NavLink to="/women" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>女士</NavLink>
 					</li>
 					<li>
-						<NavLink to="/men" replace activeClassName="activeheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>男生</NavLink>
+						<NavLink to="/men" replace activeClassName="activeheader" style={this.props.isWhite?{background:'white',color:'black'}:null}>男士</NavLink>
 					</li>
 					<li>
 						<NavLink to="/cosmetics" replace activeClassName="activeheader"  style={this.props.isWhite?{background:'white',color:'black'}:null}>美妆</NavLink>
