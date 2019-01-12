@@ -4,7 +4,6 @@ import { PullToRefresh, Button } from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 import Footer from '../../components/footer'
-// import {getContent} from './module.js'
 function getContent(){
 	return axios({
 		url:`http://www.mei.com/appapi/silo/eventForH5?categoryId=crossborder&pageIndex=1&timestamp=1547034069496&summary=d3cc14bdcf06acd6536bd6c365d6d0f0&platform_code=H5`
@@ -22,19 +21,18 @@ class Crossborder extends React.Component {
       down: true,
       height: document.documentElement.clientHeight,
       data:[],
-      updata:[]
     };
   }
 
   componentDidMount(){
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
-    getContent().then(res=>{
+    getContent().then(res=>
     	// console.log(res)
 	     this.setState({
 	      height: hei,
 	      data:res
 	    })	
-    })
+    )
   }
 
   render(){
