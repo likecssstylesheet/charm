@@ -74,10 +74,9 @@ class Lifestyle extends Component {
             <li key={item.eventId} onClick={this.handleDetail.bind(this,item.eventId)}>
               <img src={item.imageUrl} alt="图片出不来了"/>
               <div>
-                <span>{item.siloCategory}直发</span>
-          <p>{item.englishName}</p>
-          <p>{item.chineseName}</p>
-          <p>{item.discountText}</p>
+            <p>{item.englishName}</p>
+            <p>{item.chineseName}</p>
+            <p>{item.discountText}</p>
         </div>
 
             </li>
