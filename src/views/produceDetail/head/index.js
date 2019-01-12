@@ -21,8 +21,8 @@ class Head extends Component{
 			    <span className="iconfont icon-caidan"></span>
 			    {this.state.isShow? <ul>
 			    	<li><a href="#/index">首页</a></li>
-			    	<li><a>购物袋</a></li>
-			    	<li><a>个人中心</a></li>
+			    	<li><a href="#/index">购物袋</a></li>
+			    	<li><a href="#/index">个人中心</a></li>
 			    </ul>:null}
 			</div>
 

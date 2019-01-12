@@ -49,8 +49,8 @@ class Produce extends Component{
       	<div className="swipe"><Swipe data={this.state.banner}></Swipe></div>
 		<ul className="nav">
 			{
-				this.state.imgs.map(item=>
-					<li key={item.siloId}>
+				this.state.imgs.map((item,index)=>
+					<li key={item.siloId+index}>
 						<img src={item.categoryImgStr} alt="图片出不来了"/>
 					</li>
 				)
