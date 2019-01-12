@@ -39,7 +39,7 @@ class Main extends Component {
 
   scrollto(){
 
-  	console.log(document.documentElement.scrollTop)
+  	
   }
 
   render() {
