@@ -42,7 +42,7 @@ class Index extends Component{
 		return <div id="indexf">
 		{
 			this.state.bannerList.map(item=>{
-				return <div key={item.id} className="banner">
+				return <div key={item.id} className="banner" onClick={this.goto.bind(this,item.link_url.split('/').slice(-1))}>
 					<img src={item.main_image}/>
 					<div className="title">
 						<h2>{item.main_title}</h2>
@@ -109,6 +109,9 @@ class Index extends Component{
 	}
 	handleDetail(id){
 		this.props.history.push(`/productmini/${id}`)
+	}
+	goto(data){
+		this.props.history.push(`/brand/${data}`)
 	}
 }
                                                                                                                                       
