@@ -17,7 +17,7 @@ class Master extends Component{
 	
 	render(){			
 		return 			<div id="master">
-								<div className="shaixuan">筛选 <img src="/images/cuohao.png" onClick={this.backto.bind(this)}/></div>
+								<div className="shaixuan">筛选 <img src="/images/cuohao.png" onClick={this.backto.bind(this)} alt="图片显示失败" /></div>
 								<div className="prizearound">价格区间 </div>
 								<div className="allinput"><input placeholder="￥最低价格" className="inputleft"/><span>一</span><input className="inputright" placeholder="￥最高价格"/></div>
 								<ul>
