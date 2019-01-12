@@ -8,4 +8,11 @@ function getBanner(){
 	})
 }
 
-export {getBanner}
+function getContent(){
+	return axios({
+		url:'http://www.mei.com/appapi/silo/eventForH5?categoryId=lifestyle&pageIndex=1&timestamp=1547254476949&summary=cc53be8e1ba65adbb2b382a11050c718&platform_code=H5'
+	}).then(res=>{
+		return res.data.eventList
+	})
+}
+export {getBanner,getContent}
